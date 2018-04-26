@@ -1,5 +1,7 @@
 package net.ictcampus.figures;
 
-public class Koenig {
-
+public class Koenig extends Figur{
+	public void bewegen() {
+		
+	}
 }
