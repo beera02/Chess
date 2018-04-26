@@ -1,16 +1,16 @@
 package net.ictcampus.figures;
 
-import javax.swing.ImageIcon;
+import java.awt.Image;
 
-public abstract class Figur {
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
+public abstract class Figur extends JButton {
 	public String figurFarbe;
 	public String figurName;
 	public int[][] position = new int[8][8];
 	public ImageIcon bild;
 	
-	public Figur(String name, String farbe) {
-	     this.figurFarbe = farbe;
-	     this.figurName = name;
-	}
+	
 	public abstract void bewegen();
 }
