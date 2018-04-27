@@ -29,6 +29,7 @@ public class FeldGUI extends JFrame {
      private Spieler spieler2;
      private Color hellBraun = new Color(220, 191, 157);
      private Color dunkelBraun = new Color(180, 92, 52);
+     private Color transparent = new Color(0, 0, 0, 0);
      private JPanel overlay = new JPanel();
 
      public FeldGUI() {
@@ -79,6 +80,8 @@ public class FeldGUI extends JFrame {
           buttonPanel.setPreferredSize(new Dimension(800, 800));
           buttonPanel.setVisible(true);
           buttonPanel.setLayout(new GridLayout(8, 8));
+          buttonPanel.setOpaque(false);
+          
 
      }
      
@@ -87,7 +90,7 @@ public class FeldGUI extends JFrame {
           overlay.setVisible(true);
           LayoutManager over = new OverlayLayout(overlay);
           overlay.setLayout(over);
-          overlay.setOpaque(false);
+          overlay.setBackground(null);
           overlay.add(buttonPanel);
           overlay.add(spielfeldPanel);
           this.add(overlay, BorderLayout.CENTER);
