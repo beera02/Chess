@@ -58,7 +58,6 @@ public class FeldGUI extends JFrame {
                          schwarzeFelder[i] = buttonSchwarz;
                          weisseFelder[i] = buttonWeiss;
                     }
-                    
                }
           }
 	}
