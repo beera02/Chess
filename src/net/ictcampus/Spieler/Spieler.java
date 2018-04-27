@@ -9,11 +9,6 @@ public class Spieler {
 	private Figur[] besiegteFiguren;
 	private String spielerName;
 	
-	public static void main(String[] args) {
-        FeldGUI fg = new FeldGUI();
-        fg.setSize(1920, 1080);
-        fg.setVisible(true);
-	}
 	public void play() {
 		
 	}
