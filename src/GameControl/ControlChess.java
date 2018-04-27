@@ -60,7 +60,7 @@ public class ControlChess {
           Figur bauer6_weiss = new Bauer(white);
           Figur bauer7_weiss = new Bauer(white);
           Figur bauer8_weiss = new Bauer(white);
-
+          
           figuren_schwarz.add(turm1_schwarz);
           figuren_schwarz.add(springer1_schwarz);
           figuren_schwarz.add(laeufer1_schwarz);
@@ -95,14 +95,86 @@ public class ControlChess {
           figuren_weiss.add(bauer7_weiss);
           figuren_weiss.add(bauer8_weiss);
 
+          turm1_schwarz.setxPos(0);
+          turm1_schwarz.setyPos(7);
+          springer1_schwarz.setxPos(1);
+          springer1_schwarz.setyPos(7);
+          laeufer1_schwarz.setxPos(2);
+          laeufer1_schwarz.setyPos(7);
+          dame_schwarz.setxPos(3);
+          dame_schwarz.setyPos(7);
+          koenig_schwarz.setxPos(4);
+          koenig_schwarz.setyPos(7);
+          laeufer2_schwarz.setxPos(5);
+          laeufer2_schwarz.setyPos(7);
+          springer2_schwarz.setxPos(6);
+          springer2_schwarz.setyPos(7);
+          turm2_schwarz.setxPos(7);
+          turm2_schwarz.setyPos(7);
+          
+          turm1_weiss.setxPos(0);
+          turm1_weiss.setyPos(0);
+          springer1_weiss.setxPos(1);
+          springer1_weiss.setyPos(7);
+          laeufer1_weiss.setxPos(2);
+          laeufer1_weiss.setyPos(7);
+          dame_weiss.setxPos(3);
+          dame_weiss.setyPos(7);
+          koenig_weiss.setxPos(4);
+          koenig_weiss.setyPos(7);
+          laeufer2_weiss.setxPos(5);
+          laeufer2_weiss.setyPos(7);
+          springer2_weiss.setxPos(6);
+          springer2_weiss.setyPos(7);
+          turm2_weiss.setxPos(7);
+          turm2_weiss.setyPos(7);
+          
+          bauer1_schwarz.setxPos(0);
+          bauer1_schwarz.setyPos(6);
+          bauer2_schwarz.setxPos(1);
+          bauer2_schwarz.setyPos(6);
+          bauer3_schwarz.setxPos(2);
+          bauer3_schwarz.setyPos(6);
+          bauer4_schwarz.setxPos(3);
+          bauer4_schwarz.setyPos(6);
+          bauer5_schwarz.setxPos(4);
+          bauer5_schwarz.setyPos(6);
+          bauer6_schwarz.setxPos(5);
+          bauer6_schwarz.setyPos(6);
+          bauer7_schwarz.setxPos(6);
+          bauer7_schwarz.setyPos(6);
+          bauer8_schwarz.setxPos(7);
+          bauer8_schwarz.setyPos(6);
+          
+          bauer1_weiss.setxPos(0);
+          bauer1_weiss.setyPos(1);
+          bauer2_weiss.setxPos(1);
+          bauer2_weiss.setyPos(1);
+          bauer3_weiss.setxPos(2);
+          bauer3_weiss.setyPos(1);
+          bauer4_weiss.setxPos(3);
+          bauer4_weiss.setyPos(1);
+          bauer5_weiss.setxPos(4);
+          bauer5_weiss.setyPos(1);
+          bauer1_weiss.setxPos(5);
+          bauer1_weiss.setyPos(1);
+          bauer7_weiss.setxPos(6);
+          bauer7_weiss.setyPos(1);
+          bauer8_weiss.setxPos(7);
+          bauer8_weiss.setyPos(1);
           
      }
 
      public void initField() {
+          String pName = "";
           FeldGUI fg = new FeldGUI();
           fg.setSize(1000, 1000);
           fg.setVisible(true);
           fg.setzeFigur(figuren_schwarz.get(0), 1, 1);
+          for (Figur figur : figuren_schwarz) {
+               pName = "p"+figur.getxPos()+figur.getyPos();
+               fg.p05.add()
+          }
      }
 
      public static void main(String[] args) {
