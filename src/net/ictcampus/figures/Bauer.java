@@ -20,6 +20,7 @@ public class Bauer extends Figur {
           
           try {
                bauer = ImageIO.read(getClass().getResource("bauer_" + farbe + ".png"));
+               System.out.println("bauer_"+farbe+".png");
           } catch (IOException e) {
                System.out.println(e);
           }
@@ -31,6 +32,4 @@ public class Bauer extends Figur {
 
      }
      
-     public static void main(String[] args) {
-     }
 }

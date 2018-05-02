@@ -20,6 +20,7 @@ public class Springer extends Figur{
           
           try {
                springer = ImageIO.read(getClass().getResource("springer_" + farbe + ".png"));
+               System.out.println("springer_"+farbe+".png");
           } catch (IOException e) {
                System.out.println(e);
           }
