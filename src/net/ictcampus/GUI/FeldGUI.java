@@ -10,9 +10,12 @@ import java.awt.LayoutManager;
 import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -25,7 +28,6 @@ import net.ictcampus.figures.Figur;
 
 public class FeldGUI extends JFrame {
 
-     private JButton[][] felder;
      private JButton buttonWeiss;
      private JButton buttonSchwarz;
      private JPanel spielfeldPanel = new JPanel();
@@ -45,9 +47,13 @@ public class FeldGUI extends JFrame {
 	 public JButton okButton = new JButton();
 	 public JTextArea ta1 = new JTextArea();
 	 private ButtonListener bl1 = new ButtonListener(ta1, tf1, buttonSchwarz, spieler1, spieler2);
+     
+     //Dies sind alle Felder, auf welcher möglicherweise eine Figur steht.
+     private JPanel[][] felderJPanel = new JPanel[8][8];
 
      public FeldGUI() {
-          this.setSize(800, 800);
+          super();
+          //this.setSize(800, 800);
           this.setResizable(false);
           erstelleSpielfeld();
           erstelleFigurenPanel();
@@ -66,13 +72,13 @@ public class FeldGUI extends JFrame {
                for (int j = 0; j < 4; j++) {
                     buttonWeiss = new JButton();
                     buttonWeiss.setPreferredSize(new Dimension(100, 100));
-                    buttonWeiss.setVisible(true);
-                    buttonWeiss.setEnabled(true);
+                    //buttonWeiss.setVisible(true);
+                    buttonWeiss.setEnabled(false);
                     buttonWeiss.setBackground(hellBraun);
                     buttonSchwarz = new JButton();
                     buttonSchwarz.setPreferredSize(new Dimension(100, 100));
-                    buttonSchwarz.setVisible(true);
-                    buttonSchwarz.setEnabled(true);
+                    //buttonSchwarz.setVisible(true);
+                    buttonSchwarz.setEnabled(false);
                     buttonSchwarz.setBackground(dunkelBraun);
                     if (i % 2 == 0) {
                          spielfeldPanel.add(buttonSchwarz);
@@ -93,9 +99,17 @@ public class FeldGUI extends JFrame {
      }
 
      public void erstelleFigurenPanel() {
-          buttonPanel.setPreferredSize(new Dimension(800, 800));
-          buttonPanel.setVisible(true);
           buttonPanel.setLayout(new GridLayout(8, 8));
+          for (int i = 0; i < 8; i++) {
+               for (int j = 0; j < 8; j++) {
+                    felderJPanel[j][i] = new JPanel();
+                    felderJPanel[j][i].setOpaque(false);
+                    buttonPanel.add(felderJPanel[j][i]);
+               }
+          }
+          buttonPanel.setPreferredSize(new Dimension(800, 800));
+          //buttonPanel.setVisible(true);
+         
           buttonPanel.setOpaque(false);
           
 
@@ -139,7 +153,7 @@ public class FeldGUI extends JFrame {
      
      public void overlay() {
           overlay.setPreferredSize(new Dimension(800, 800));
-          overlay.setVisible(true);
+          //overlay.setVisible(true);
           LayoutManager over = new OverlayLayout(overlay);
           overlay.setLayout(over);
           overlay.setBackground(null);
@@ -149,7 +163,8 @@ public class FeldGUI extends JFrame {
      }
 
      public void setzeFigur(Figur figur, int x, int y) {
-
+          felderJPanel[x][y].add(new JLabel(figur.getSymbol()));
+         // felderJPanel[x][y].setVisible(true);
      }
 
      public void play() {
@@ -157,5 +172,25 @@ public class FeldGUI extends JFrame {
      }  
      public void spielStart() {
     	 ta1.setText("Willkommen beim Spiel Chess!\nSpieler 1: Gib deinen Namen im Textfeld links ein!");
+     }
+
+     
+     public JPanel[][] getFelderJPanel() {
+          return felderJPanel;
+     }
+
+     
+     public void setFelderJPanel(JPanel[][] felderJPanel) {
+          this.felderJPanel = felderJPanel;
+     }
+
+     
+     public JPanel getButtonPanel() {
+          return buttonPanel;
+     }
+
+     
+     public void setButtonPanel(JPanel buttonPanel) {
+          this.buttonPanel = buttonPanel;
      }
 }
