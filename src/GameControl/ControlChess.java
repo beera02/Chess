@@ -106,6 +106,6 @@ public class ControlChess {
      }
 
      public static void main(String[] args) {
-          ControlChess control = new ControlChess();
+          ControlChess control = new ControlChess();          
      }
 }

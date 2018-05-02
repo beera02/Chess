@@ -15,4 +15,10 @@ public class Spieler {
 	public void entferneFigur() {
 		
 	}
+	public String getSpielerName() {
+		return spielerName;
+	}
+	public void setSpielerName(String spielerName) {
+		this.spielerName = spielerName;
+	}
 }
