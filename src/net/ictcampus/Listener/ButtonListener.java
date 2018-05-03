@@ -8,6 +8,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import net.ictcampus.Spieler.Spieler;
+import net.ictcampus.figures.Figur;
+import GameControl.ControlChess;
 
 public class ButtonListener implements ActionListener {
 	private JTextArea ta;
@@ -17,13 +19,15 @@ public class ButtonListener implements ActionListener {
 	private Spieler spieler2;
 	private double randomStarter;
 	private int runde = 1;
+	private ControlChess control;
 	
-	public ButtonListener(JTextArea ta, JTextField tf, JButton b, Spieler spieler1, Spieler spieler2) {
+	public ButtonListener(JTextArea ta, JTextField tf, JButton b, Spieler spieler1, Spieler spieler2, ControlChess control) {
 		this.ta = ta;
 		this.tf = tf;
 		this.b = b;
 		this.spieler1 = spieler1;
 		this.spieler2 = spieler2;
+		this.control = control;
 	}
 	
 	@Override
@@ -39,9 +43,6 @@ public class ButtonListener implements ActionListener {
 			spieler2.setSpielerName(tf.getText());
 			tf.setText(null);
 			randomStarter = Math.round(Math.random());
-			System.out.println(randomStarter);
-			System.out.println(spieler1.getSpielerName());
-			System.out.println(spieler2.getSpielerName());
 			
 			if(randomStarter == 1.0) {
 				ta.setText("Der Spieler 2 heisst nun " + spieler2.getSpielerName() + "!\n" + spieler2.getSpielerName() + ": Sie wurden ausgewählt, das Spiel mit Weiss zu starten!");
@@ -49,8 +50,9 @@ public class ButtonListener implements ActionListener {
 			else {
 				ta.setText("Der Spieler 2 heisst nun " + spieler2.getSpielerName() + "!\n" + spieler1.getSpielerName() + ": Sie wurden ausgewählt, das Spiel mit Weiss zu starten!");
 			}
+			control.wechsleSpieler("weiss");
 			tf.setEnabled(false);
-			b.setEnabled(false);
+			b.setEnabled(false); 
 		}
 	}
 }

@@ -4,6 +4,8 @@ import java.awt.Color;
 
 import javax.swing.ImageIcon;
 
+import net.ictcampus.GUI.FeldGUI;
+
 public abstract class Figur{
 	public String figurFarbe;
 	public String figurName;
@@ -11,7 +13,11 @@ public abstract class Figur{
 	public int yPos;
 	public ImageIcon symbol;
 	public Color myColor = new Color(242, 206, 103);
+	public FeldGUI field;
 	
+	public Figur(FeldGUI field) {
+		this.field = field;
+	}
 	public abstract void bewegen();
 
 

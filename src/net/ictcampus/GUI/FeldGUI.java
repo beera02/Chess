@@ -21,6 +21,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.OverlayLayout;
 
+import GameControl.ControlChess;
 import javafx.scene.layout.Border;
 import net.ictcampus.Listener.ButtonListener;
 import net.ictcampus.Spieler.Spieler;
@@ -44,15 +45,20 @@ public class FeldGUI extends JFrame {
      private Color transparent = new Color(0, 0, 0, 0);
      private JPanel overlay = new JPanel();
 	 public JTextField tf1 = new JTextField();
-	 public JButton okButton = new JButton();
+	 public JButton okButton;
 	 public JTextArea ta1 = new JTextArea();
-	 private ButtonListener bl1 = new ButtonListener(ta1, tf1, buttonSchwarz, spieler1, spieler2);
+	 private ControlChess control;
+
+	private ButtonListener bl1;
      
      //Dies sind alle Felder, auf welcher möglicherweise eine Figur steht.
      private JPanel[][] felderJPanel = new JPanel[8][8];
 
-     public FeldGUI() {
+     public FeldGUI(ControlChess control) {
           super();
+          this.control = control;
+          okButton = new JButton();
+          bl1 = new ButtonListener(ta1, tf1, okButton, spieler1, spieler2, control);
           //this.setSize(800, 800);
           this.setResizable(false);
           erstelleSpielfeld();
@@ -164,7 +170,7 @@ public class FeldGUI extends JFrame {
 
      public void setzeFigur(Figur figur, int x, int y) {
           felderJPanel[x][y].add(new JLabel(figur.getSymbol()));
-         // felderJPanel[x][y].setVisible(true);
+          //felderJPanel[x][y].setVisible(true);
      }
 
      public void play() {
@@ -193,4 +199,19 @@ public class FeldGUI extends JFrame {
      public void setButtonPanel(JPanel buttonPanel) {
           this.buttonPanel = buttonPanel;
      }
+	 public JPanel getSpielfeldPanel() {
+		return spielfeldPanel;
+	}
+
+	public void setSpielfeldPanel(JPanel spielfeldPanel) {
+		this.spielfeldPanel = spielfeldPanel;
+	}
+
+	public ControlChess getControl() {
+		return control;
+	}
+
+	public void setControl(ControlChess control) {
+		this.control = control;
+	}
 }

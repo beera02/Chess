@@ -20,7 +20,6 @@ public class Koenig extends Figur {
 
           try {
                koenig = ImageIO.read(getClass().getResource("koenig_" + farbe + ".png"));
-               System.out.println("koenig_"+farbe+".png");
           } catch (IOException e) {
                System.out.println(e);
           }

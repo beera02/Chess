@@ -20,7 +20,6 @@ public class Laeufer extends Figur{
           
           try {
                laeufer = ImageIO.read(getClass().getResource("laeufer_" + farbe + ".png"));
-               System.out.println("laeufer_"+farbe+".png");
           } catch (IOException e) {
                System.out.println(e);
           }

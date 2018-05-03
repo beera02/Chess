@@ -20,7 +20,6 @@ public class Dame extends Figur{
           
           try {
                dame = ImageIO.read(getClass().getResource("dame_" + farbe + ".png"));
-               System.out.println("dame_"+farbe+".png");
           } catch (IOException e) {
                System.out.println(e);
           }

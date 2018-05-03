@@ -5,6 +5,7 @@ import java.awt.List;
 import java.util.ArrayList;
 
 import net.ictcampus.GUI.FeldGUI;
+import net.ictcampus.Listener.ButtonListener;
 import net.ictcampus.figures.Bauer;
 import net.ictcampus.figures.Dame;
 import net.ictcampus.figures.Figur;
@@ -21,7 +22,7 @@ public class ControlChess {
 
      public ControlChess() {
           ausgangslage();
-          feld = new FeldGUI();
+          feld = new FeldGUI(this);
           initField();
 
      }
@@ -180,8 +181,43 @@ public class ControlChess {
            }
           feld.setVisible(true);
      }
-
-     public static void main(String[] args) {
-          ControlChess control = new ControlChess();          
+     
+     public void wechsleSpieler(String farbe) {
+    	 if(farbe.equals("weiss")) {
+             for (Figur figur : figuren_weiss) {
+                 feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124, (figur.getyPos() + 1) * 111).setEnabled(true);
+             }
+             for (Figur figur : figuren_schwarz) {
+            	 feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124, (figur.getyPos() + 1) * 111).setEnabled(false); 
+             }
+    	 }
+    	 else {
+             for (Figur figur : figuren_schwarz) {
+            	 feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124, (figur.getyPos() + 1) * 111).setEnabled(true); 
+             }
+             for (Figur figur : figuren_weiss) {
+            	 feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124, (figur.getyPos() + 1) * 111).setEnabled(false);
+             }
+    	 }
      }
+     
+     public static void main(String[] args) {
+    	 ControlChess control = new ControlChess();
+     }
+     
+	public ArrayList<Figur> getFiguren_schwarz() {
+		return figuren_schwarz;
+     }
+
+	public void setFiguren_schwarz(ArrayList<Figur> figuren_schwarz) {
+		this.figuren_schwarz = figuren_schwarz;
+	}
+
+	public ArrayList<Figur> getFiguren_weiss() {
+		return figuren_weiss;
+	}
+
+	public void setFiguren_weiss(ArrayList<Figur> figuren_weiss) {
+		this.figuren_weiss = figuren_weiss;
+	}
 }
