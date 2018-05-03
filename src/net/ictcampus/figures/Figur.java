@@ -15,10 +15,13 @@ public abstract class Figur{
 	public Color myColor = new Color(242, 206, 103);
 	public FeldGUI field;
 	
-	public Figur(FeldGUI field) {
-		this.field = field;
-	}
 	public abstract void bewegen();
+	
+	public Figur(FeldGUI field) {
+	     this.field = field;
+	}
+	
+	public abstract void berechneFelder();
 
 
 	

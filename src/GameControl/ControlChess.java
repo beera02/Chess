@@ -1,7 +1,6 @@
 
 package GameControl;
 
-import java.awt.List;
 import java.util.ArrayList;
 
 import net.ictcampus.GUI.FeldGUI;
@@ -20,50 +19,85 @@ public class ControlChess {
      private ArrayList<Figur> figuren_weiss = new ArrayList<Figur>();
      private FeldGUI feld;
 
+     String black = "schwarz";
+     String white = "weiss";
+
+     public Figur turm1_schwarz;
+     public Figur turm2_schwarz;
+     public Figur laeufer1_schwarz;
+     public Figur laeufer2_schwarz;
+     public Figur springer1_schwarz;
+     public Figur springer2_schwarz;
+     public Figur dame_schwarz;
+     public Figur koenig_schwarz;
+     public Figur bauer1_schwarz;
+     public Figur bauer2_schwarz;
+     public Figur bauer3_schwarz;
+     public Figur bauer4_schwarz;
+     public Figur bauer5_schwarz;
+     public Figur bauer6_schwarz;
+     public Figur bauer7_schwarz;
+     public Figur bauer8_schwarz;
+
+     public Figur turm1_weiss;
+     public Figur turm2_weiss;
+     public Figur laeufer1_weiss;
+     public Figur laeufer2_weiss;
+     public Figur springer1_weiss;
+     public Figur springer2_weiss;
+     public Figur dame_weiss;
+     public Figur koenig_weiss;
+     public Figur bauer1_weiss;
+     public Figur bauer2_weiss;
+     public Figur bauer3_weiss;
+     public Figur bauer4_weiss;
+     public Figur bauer5_weiss;
+     public Figur bauer6_weiss;
+     public Figur bauer7_weiss;
+     public Figur bauer8_weiss;
+
      public ControlChess() {
           ausgangslage();
           feld = new FeldGUI(this);
+          ausgangslage();
           initField();
-
      }
 
      public void ausgangslage() {
-          String black = "schwarz";
-          String white = "weiss";
 
-          Figur turm1_schwarz = new Turm(black);
-          Figur turm2_schwarz = new Turm(black);
-          Figur laeufer1_schwarz = new Laeufer(black);
-          Figur laeufer2_schwarz = new Laeufer(black);
-          Figur springer1_schwarz = new Springer(black);
-          Figur springer2_schwarz = new Springer(black);
-          Figur dame_schwarz = new Dame(black);
-          Figur koenig_schwarz = new Koenig(black);
-          Figur bauer1_schwarz = new Bauer(black);
-          Figur bauer2_schwarz = new Bauer(black);
-          Figur bauer3_schwarz = new Bauer(black);
-          Figur bauer4_schwarz = new Bauer(black);
-          Figur bauer5_schwarz = new Bauer(black);
-          Figur bauer6_schwarz = new Bauer(black);
-          Figur bauer7_schwarz = new Bauer(black);
-          Figur bauer8_schwarz = new Bauer(black);
-
-          Figur turm1_weiss = new Turm(white);
-          Figur turm2_weiss = new Turm(white);
-          Figur laeufer1_weiss = new Laeufer(white);
-          Figur laeufer2_weiss = new Laeufer(white);
-          Figur springer1_weiss = new Springer(white);
-          Figur springer2_weiss = new Springer(white);
-          Figur dame_weiss = new Dame(white);
-          Figur koenig_weiss = new Koenig(white);
-          Figur bauer1_weiss = new Bauer(white);
-          Figur bauer2_weiss = new Bauer(white);
-          Figur bauer3_weiss = new Bauer(white);
-          Figur bauer4_weiss = new Bauer(white);
-          Figur bauer5_weiss = new Bauer(white);
-          Figur bauer6_weiss = new Bauer(white);
-          Figur bauer7_weiss = new Bauer(white);
-          Figur bauer8_weiss = new Bauer(white);
+          turm1_schwarz = new Turm(black, feld);
+          turm2_schwarz = new Turm(black, feld);
+          laeufer1_schwarz = new Laeufer(black, feld);
+          laeufer2_schwarz = new Laeufer(black, feld);
+          springer1_schwarz = new Springer(black, feld);
+          springer2_schwarz = new Springer(black, feld);
+          dame_schwarz = new Dame(black, feld);
+          koenig_schwarz = new Koenig(black, feld);
+          bauer1_schwarz = new Bauer(black, feld);
+          bauer2_schwarz = new Bauer(black, feld);
+          bauer3_schwarz = new Bauer(black, feld);
+          bauer4_schwarz = new Bauer(black, feld);
+          bauer5_schwarz = new Bauer(black, feld);
+          bauer6_schwarz = new Bauer(black, feld);
+          bauer7_schwarz = new Bauer(black, feld);
+          bauer8_schwarz = new Bauer(black, feld);
+          
+          turm1_weiss = new Turm(white, feld);
+          turm2_weiss = new Turm(white, feld);
+          laeufer1_weiss = new Laeufer(white, feld);
+          laeufer2_weiss = new Laeufer(white, feld);
+          springer1_weiss = new Springer(white, feld);
+          springer2_weiss = new Springer(white, feld);
+          dame_weiss = new Dame(white, feld);
+          koenig_weiss = new Koenig(white, feld);
+          bauer1_weiss = new Bauer(white, feld);
+          bauer2_weiss = new Bauer(white, feld);
+          bauer3_weiss = new Bauer(white, feld);
+          bauer4_weiss = new Bauer(white, feld);
+          bauer5_weiss = new Bauer(white, feld);
+          bauer6_weiss = new Bauer(white, feld);
+          bauer7_weiss = new Bauer(white, feld);
+          bauer8_weiss = new Bauer(white, feld);
           
           figuren_schwarz.add(turm1_schwarz);
           figuren_schwarz.add(springer1_schwarz);
@@ -81,7 +115,7 @@ public class ControlChess {
           figuren_schwarz.add(bauer6_schwarz);
           figuren_schwarz.add(bauer7_schwarz);
           figuren_schwarz.add(bauer8_schwarz);
-          
+
           figuren_weiss.add(turm1_weiss);
           figuren_weiss.add(springer1_weiss);
           figuren_weiss.add(laeufer1_weiss);
@@ -115,7 +149,7 @@ public class ControlChess {
           springer2_schwarz.setyPos(7);
           turm2_schwarz.setxPos(7);
           turm2_schwarz.setyPos(7);
-          
+
           turm1_weiss.setxPos(0);
           turm1_weiss.setyPos(0);
           springer1_weiss.setxPos(1);
@@ -132,7 +166,7 @@ public class ControlChess {
           springer2_weiss.setyPos(0);
           turm2_weiss.setxPos(7);
           turm2_weiss.setyPos(0);
-          
+
           bauer1_schwarz.setxPos(0);
           bauer1_schwarz.setyPos(6);
           bauer2_schwarz.setxPos(1);
@@ -149,7 +183,7 @@ public class ControlChess {
           bauer7_schwarz.setyPos(6);
           bauer8_schwarz.setxPos(7);
           bauer8_schwarz.setyPos(6);
-          
+
           bauer1_weiss.setxPos(0);
           bauer1_weiss.setyPos(1);
           bauer2_weiss.setxPos(1);
@@ -166,19 +200,19 @@ public class ControlChess {
           bauer7_weiss.setyPos(1);
           bauer8_weiss.setxPos(7);
           bauer8_weiss.setyPos(1);
-          
+
      }
 
      public void initField() {
           feld.setSize(1000, 1000);
-          
+
           for (Figur figur : figuren_schwarz) {
-              feld.setzeFigur(figur, figur.getxPos(), figur.getyPos()); 
+               feld.setzeFigur(figur, figur.getxPos(), figur.getyPos());
           }
           for (Figur figur : figuren_weiss) {
                System.out.println(figur.getFigurName());
-               feld.setzeFigur(figur, figur.getxPos(), figur.getyPos()); 
-           }
+               feld.setzeFigur(figur, figur.getxPos(), figur.getyPos());
+          }
           feld.setVisible(true);
      }
      
@@ -200,24 +234,33 @@ public class ControlChess {
              }
     	 }
      }
-     
+
+     public void bewegen(Figur figur, int x, int y) {
+          feld.entferneFigur(figur.getxPos(), figur.getyPos());
+          feld.setzeFigur(figur, x, y);
+
+     }
+
      public static void main(String[] args) {
-    	 ControlChess control = new ControlChess();
-     }
-     
-	public ArrayList<Figur> getFiguren_schwarz() {
-		return figuren_schwarz;
+          ControlChess control = new ControlChess();
+          control.bewegen(control.turm1_schwarz, 5, 5);
+          control.turm1_schwarz.berechneFelder();
      }
 
-	public void setFiguren_schwarz(ArrayList<Figur> figuren_schwarz) {
-		this.figuren_schwarz = figuren_schwarz;
-	}
+     public ArrayList<Figur> getFiguren_schwarz() {
+          return figuren_schwarz;
+     }
 
-	public ArrayList<Figur> getFiguren_weiss() {
-		return figuren_weiss;
-	}
+     public void setFiguren_schwarz(ArrayList<Figur> figuren_schwarz) {
+          this.figuren_schwarz = figuren_schwarz;
+     }
 
-	public void setFiguren_weiss(ArrayList<Figur> figuren_weiss) {
-		this.figuren_weiss = figuren_weiss;
-	}
+     public ArrayList<Figur> getFiguren_weiss() {
+          return figuren_weiss;
+     }
+
+     public void setFiguren_weiss(ArrayList<Figur> figuren_weiss) {
+          this.figuren_weiss = figuren_weiss;
+     }
+
 }

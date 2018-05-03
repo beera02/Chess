@@ -7,11 +7,6 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
-import java.awt.TextArea;
-import java.awt.TextField;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -171,6 +166,14 @@ public class FeldGUI extends JFrame {
      public void setzeFigur(Figur figur, int x, int y) {
           felderJPanel[x][y].add(new JLabel(figur.getSymbol()));
           //felderJPanel[x][y].setVisible(true);
+          System.out.println(x);
+          figur.setxPos(x);
+          figur.setyPos(y);
+         // felderJPanel[x][y].setVisible(true);
+     }
+     
+     public void entferneFigur(int x, int y) {
+          felderJPanel[x][y].removeAll();
      }
 
      public void play() {
@@ -181,8 +184,8 @@ public class FeldGUI extends JFrame {
      }
 
      
-     public JPanel[][] getFelderJPanel() {
-          return felderJPanel;
+     public JPanel getFelderJPanel(int x, int y) {
+          return felderJPanel[x][y];
      }
 
      

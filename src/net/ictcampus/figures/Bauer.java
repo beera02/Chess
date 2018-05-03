@@ -7,14 +7,16 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import net.ictcampus.GUI.FeldGUI;
+
 public class Bauer extends Figur {
 
      // Instanzvariablen
      private Image bauer;
 
      // Konstruktor
-     public Bauer(String farbe) {
-          
+     public Bauer(String farbe, FeldGUI field) {
+          super(field);
           this.figurName = "Bauer";
           this.figurFarbe = farbe;
           
@@ -27,7 +29,7 @@ public class Bauer extends Figur {
           this.symbol = new ImageIcon(bauer);
      }
 
-     public void bewegen() {
+     public void berechneFelder() {
 
      }
      
