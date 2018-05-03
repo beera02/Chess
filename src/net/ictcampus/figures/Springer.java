@@ -6,6 +6,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import net.ictcampus.GUI.FeldGUI;
+
 public class Springer extends Figur{
      
 
@@ -13,8 +15,8 @@ public class Springer extends Figur{
      private Image springer;
 
      // Konstruktor
-     public Springer(String farbe) {
-          
+     public Springer(String farbe, FeldGUI field) {
+          super(field);
           this.figurName = "Springer";
           this.figurFarbe = farbe;
           
@@ -27,7 +29,7 @@ public class Springer extends Figur{
           
           this.symbol = new ImageIcon(springer);
      }
-	public void bewegen() {
+	public void berechneFelder() {
 		
 	}
 }

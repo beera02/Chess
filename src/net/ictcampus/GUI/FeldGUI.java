@@ -7,11 +7,6 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
-import java.awt.TextArea;
-import java.awt.TextField;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,7 +16,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.OverlayLayout;
 
-import javafx.scene.layout.Border;
 import net.ictcampus.Listener.ButtonListener;
 import net.ictcampus.Spieler.Spieler;
 import net.ictcampus.figures.Figur;
@@ -98,6 +92,16 @@ public class FeldGUI extends JFrame {
           }
      }
 
+     
+     public JPanel getSpielfeldPanel() {
+          return spielfeldPanel;
+     }
+
+     
+     public void setSpielfeldPanel(JPanel spielfeldPanel) {
+          this.spielfeldPanel = spielfeldPanel;
+     }
+
      public void erstelleFigurenPanel() {
           buttonPanel.setLayout(new GridLayout(8, 8));
           for (int i = 0; i < 8; i++) {
@@ -164,7 +168,14 @@ public class FeldGUI extends JFrame {
 
      public void setzeFigur(Figur figur, int x, int y) {
           felderJPanel[x][y].add(new JLabel(figur.getSymbol()));
+          System.out.println(x);
+          figur.setxPos(x);
+          figur.setyPos(y);
          // felderJPanel[x][y].setVisible(true);
+     }
+     
+     public void entferneFigur(int x, int y) {
+          felderJPanel[x][y].removeAll();
      }
 
      public void play() {
@@ -175,8 +186,8 @@ public class FeldGUI extends JFrame {
      }
 
      
-     public JPanel[][] getFelderJPanel() {
-          return felderJPanel;
+     public JPanel getFelderJPanel(int x, int y) {
+          return felderJPanel[x][y];
      }
 
      

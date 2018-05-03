@@ -6,6 +6,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import net.ictcampus.GUI.FeldGUI;
+
 public class Laeufer extends Figur{
      
 
@@ -13,8 +15,8 @@ public class Laeufer extends Figur{
      private Image laeufer;
 
      // Konstruktor
-     public Laeufer(String farbe) {
-          
+     public Laeufer(String farbe, FeldGUI field) {
+          super(field);
           this.figurName = "Läufer";
           this.figurFarbe = farbe;
           
@@ -28,7 +30,7 @@ public class Laeufer extends Figur{
           this.symbol = new ImageIcon(laeufer);
      }
      
-	public void bewegen() {
+	public void berechneFelder() {
 		
 	}
 }
