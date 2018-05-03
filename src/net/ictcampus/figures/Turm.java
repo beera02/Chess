@@ -110,8 +110,8 @@ public class Turm extends Figur {
                          }
                     }
                     else {
-                         for (Figur figur : field.getControl().getFiguren_weiss()) {
-                              if (figur.getxPos() == i & figur.getyPos() == yPos) {
+                         for (Figur figur : field.getControl().getFiguren_schwarz()) {
+                              if (figur.getxPos() == xPos & figur.getyPos() == i) {
                                    field.getSpielfeldPanel().getComponent(calcPos).setEnabled(true);
                               }
                          } 
@@ -137,8 +137,8 @@ public class Turm extends Figur {
                          }
                     }
                     else {
-                         for (Figur figur : field.getControl().getFiguren_weiss()) {
-                              if (figur.getxPos() == i & figur.getyPos() == yPos) {
+                         for (Figur figur : field.getControl().getFiguren_schwarz()) {
+                              if (figur.getxPos() == xPos & figur.getyPos() == i) {
                                    field.getSpielfeldPanel().getComponent(calcPos).setEnabled(true);
                               }
                          } 

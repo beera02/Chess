@@ -19,6 +19,7 @@ import javax.swing.OverlayLayout;
 import GameControl.ControlChess;
 import javafx.scene.layout.Border;
 import net.ictcampus.Listener.ButtonListener;
+import net.ictcampus.Listener.MyButtonListener;
 import net.ictcampus.Spieler.Spieler;
 import net.ictcampus.figures.Figur;
 
@@ -81,6 +82,8 @@ public class FeldGUI extends JFrame {
                     //buttonSchwarz.setVisible(true);
                     buttonSchwarz.setEnabled(false);
                     buttonSchwarz.setBackground(dunkelBraun);
+                    buttonWeiss.addActionListener(new MyButtonListener(this));
+                    buttonSchwarz.addActionListener(new MyButtonListener(this));
                     if (i % 2 == 0) {
                          spielfeldPanel.add(buttonSchwarz);
                          spielfeldPanel.add(buttonWeiss);
@@ -112,9 +115,8 @@ public class FeldGUI extends JFrame {
           //buttonPanel.setVisible(true);
          
           buttonPanel.setOpaque(false);
-          
-
      }
+     
      public void erstelleSpielkontrolleGUI() {
     	 tf1.setPreferredSize(new Dimension(150, 25));
     	 ta1.setPreferredSize(new Dimension(350, 80));
@@ -161,6 +163,12 @@ public class FeldGUI extends JFrame {
           overlay.add(buttonPanel);
           overlay.add(spielfeldPanel);
           this.add(overlay, BorderLayout.CENTER);
+          
+     }
+
+     
+     public JPanel getOverlay() {
+          return overlay;
      }
 
      public void setzeFigur(Figur figur, int x, int y) {

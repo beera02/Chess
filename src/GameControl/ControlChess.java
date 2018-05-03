@@ -1,10 +1,12 @@
 
 package GameControl;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 import net.ictcampus.GUI.FeldGUI;
 import net.ictcampus.Listener.ButtonListener;
+import net.ictcampus.Listener.MausListener;
 import net.ictcampus.figures.Bauer;
 import net.ictcampus.figures.Dame;
 import net.ictcampus.figures.Figur;
@@ -61,6 +63,7 @@ public class ControlChess {
           feld = new FeldGUI(this);
           ausgangslage();
           initField();
+//          feld.getButtonPanel().addMouseMotionListener(new MausListener(feld));
      }
 
      public void ausgangslage() {
@@ -225,6 +228,7 @@ public class ControlChess {
                for (Figur figur : figuren_schwarz) {
                     feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124,
                               (figur.getyPos() + 1) * 111).setEnabled(false);
+                    
                }
           } else {
                for (Figur figur : figuren_schwarz) {
@@ -235,6 +239,8 @@ public class ControlChess {
                     feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124,
                               (figur.getyPos() + 1) * 111).setEnabled(false);
                }
+               feld.repaint();
+               
           }
      }
 
@@ -246,16 +252,21 @@ public class ControlChess {
 
      public static void main(String[] args) {
           ControlChess control = new ControlChess();
-//          control.bewegen(control.koenig_schwarz, 1, 5);
-//          control.bewegen(control.dame_schwarz, 5, 2);
-//          control.bewegen(control.turm1_schwarz, 3, 4);
-//          control.bewegen(control.bauer1_weiss, 5, 5);
-//          control.turm1_schwarz.berechneFelder();
+          
+//          control.bewegen(control.turm1_weiss, 3, 4);
+//          control.turm1_weiss.berechneFelder();
 
-          control.bewegen(control.springer1_schwarz, 4, 5);
-          control.bewegen(control.bauer1_weiss, 3, 3);
-          control.bewegen(control.bauer2_weiss, 5, 3);
-          control.springer1_schwarz.berechneFelder();
+//          control.bewegen(control.springer1_schwarz, 4, 5);
+//          control.bewegen(control.bauer1_weiss, 3, 3);
+//          control.bewegen(control.bauer2_weiss, 5, 3);
+//          control.springer1_schwarz.berechneFelder();
+          
+//          control.bewegen(control.laeufer1_weiss, 5, 4);
+//          control.laeufer1_weiss.berechneFelder();
+          
+          control.bewegen(control.dame_schwarz, 4, 4);
+          control.bewegen(control.dame_weiss, 3, 4);
+          control.dame_schwarz.berechneFelder();
      }
 
      public ArrayList<Figur> getFiguren_schwarz() {
