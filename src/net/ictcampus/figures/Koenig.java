@@ -32,4 +32,10 @@ public class Koenig extends Figur {
      public void berechneFelder() {
 
      }
+
+     @Override
+     public void bewegen() {
+          // TODO Auto-generated method stub
+          
+     }
 }

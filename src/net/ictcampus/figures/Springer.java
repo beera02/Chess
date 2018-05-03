@@ -53,7 +53,6 @@ public class Springer extends Figur{
 				field.getSpielfeldPanel().getComponentAt((xPos + 1 + 2) * 124, (yPos + 1 -1) * 111).setEnabled(true);
 			}
 		}
-		
 		if(xPos + 2 < 8 & yPos + 1 < 8) {
 			if(field.getFelderJPanel(xPos + 2, yPos + 1).getComponents().length >= 1) {
 				if(figurFarbe == "schwarz") {

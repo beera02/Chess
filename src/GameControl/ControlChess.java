@@ -81,7 +81,7 @@ public class ControlChess {
           bauer6_schwarz = new Bauer(black, feld);
           bauer7_schwarz = new Bauer(black, feld);
           bauer8_schwarz = new Bauer(black, feld);
-          
+
           turm1_weiss = new Turm(white, feld);
           turm2_weiss = new Turm(white, feld);
           laeufer1_weiss = new Laeufer(white, feld);
@@ -98,7 +98,7 @@ public class ControlChess {
           bauer6_weiss = new Bauer(white, feld);
           bauer7_weiss = new Bauer(white, feld);
           bauer8_weiss = new Bauer(white, feld);
-          
+
           figuren_schwarz.add(turm1_schwarz);
           figuren_schwarz.add(springer1_schwarz);
           figuren_schwarz.add(laeufer1_schwarz);
@@ -215,24 +215,27 @@ public class ControlChess {
           }
           feld.setVisible(true);
      }
-     
+
      public void wechsleSpieler(String farbe) {
-    	 if(farbe.equals("weiss")) {
-             for (Figur figur : figuren_weiss) {
-                 feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124, (figur.getyPos() + 1) * 111).setEnabled(true);
-             }
-             for (Figur figur : figuren_schwarz) {
-            	 feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124, (figur.getyPos() + 1) * 111).setEnabled(false); 
-             }
-    	 }
-    	 else {
-             for (Figur figur : figuren_schwarz) {
-            	 feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124, (figur.getyPos() + 1) * 111).setEnabled(true); 
-             }
-             for (Figur figur : figuren_weiss) {
-            	 feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124, (figur.getyPos() + 1) * 111).setEnabled(false);
-             }
-    	 }
+          if (farbe.equals("weiss")) {
+               for (Figur figur : figuren_weiss) {
+                    feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124,
+                              (figur.getyPos() + 1) * 111).setEnabled(true);
+               }
+               for (Figur figur : figuren_schwarz) {
+                    feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124,
+                              (figur.getyPos() + 1) * 111).setEnabled(false);
+               }
+          } else {
+               for (Figur figur : figuren_schwarz) {
+                    feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124,
+                              (figur.getyPos() + 1) * 111).setEnabled(true);
+               }
+               for (Figur figur : figuren_weiss) {
+                    feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124,
+                              (figur.getyPos() + 1) * 111).setEnabled(false);
+               }
+          }
      }
 
      public void bewegen(Figur figur, int x, int y) {
@@ -243,6 +246,7 @@ public class ControlChess {
 
      public static void main(String[] args) {
           ControlChess control = new ControlChess();
+
           control.bewegen(control.springer1_schwarz, 4, 5);
           control.bewegen(control.bauer1_weiss, 3, 3);
           control.bewegen(control.bauer2_weiss, 5, 3);

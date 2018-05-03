@@ -187,6 +187,7 @@ public class FeldGUI extends JFrame {
      public JPanel getFelderJPanel(int x, int y) {
           return felderJPanel[x][y];
      }
+     
 
      
      public void setFelderJPanel(JPanel[][] felderJPanel) {
