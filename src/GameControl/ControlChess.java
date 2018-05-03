@@ -12,12 +12,14 @@ import net.ictcampus.figures.Koenig;
 import net.ictcampus.figures.Laeufer;
 import net.ictcampus.figures.Springer;
 import net.ictcampus.figures.Turm;
+import net.ictcampus.threads.aktualisiereFeld;
 
 public class ControlChess {
 
      private ArrayList<Figur> figuren_schwarz = new ArrayList<Figur>();
      private ArrayList<Figur> figuren_weiss = new ArrayList<Figur>();
      private FeldGUI feld;
+     private aktualisiereFeld thread;
 
      String black = "schwarz";
      String white = "weiss";
@@ -61,7 +63,8 @@ public class ControlChess {
           feld = new FeldGUI(this);
           ausgangslage();
           initField();
-//          feld.getButtonPanel().addMouseMotionListener(new MausListener(feld));
+          thread = new aktualisiereFeld(feld);
+          thread.start();
      }
 
      public void ausgangslage() {
@@ -254,8 +257,8 @@ public class ControlChess {
 //          control.turm1_schwarz.berechneFelder();
 //          control.springer1_schwarz.berechneFelder();
           
-//          control.bewegen(control.turm1_weiss, 3, 4);
-//          control.turm1_weiss.berechneFelder();
+          control.bewegen(control.turm1_weiss, 3, 4);
+          control.turm1_weiss.berechneFelder();
 
 //          control.bewegen(control.springer1_schwarz, 4, 5);
 //          control.bewegen(control.bauer1_weiss, 3, 3);
@@ -271,11 +274,7 @@ public class ControlChess {
 //          control.bewegen(control.bauer7_schwarz, 3, 2);
 //          control.bewegen(control.bauer8_schwarz, 6, 1);
 //          control.bewegen(control.bauer2_schwarz, 6, 2);
-          control.bewegen(control.koenig_schwarz, 3, 3);
-          control.bewegen(control.koenig_weiss, 5, 5);
-          
-          control.koenig_schwarz.berechneFelder();
-          control.koenig_weiss.berechneFelder();
+
 //          control.bauer1_schwarz.berechneFelder();
 //          control.bauer3_schwarz.berechneFelder();
 //          control.bauer8_schwarz.berechneFelder();
