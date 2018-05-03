@@ -13,6 +13,7 @@ import net.ictcampus.figures.Laeufer;
 import net.ictcampus.figures.Springer;
 import net.ictcampus.figures.Turm;
 import net.ictcampus.threads.aktualisiereFeld;
+import sun.management.ConnectorAddressLink;
 
 public class ControlChess {
 
@@ -257,8 +258,14 @@ public class ControlChess {
 //          control.turm1_schwarz.berechneFelder();
 //          control.springer1_schwarz.berechneFelder();
           
-          control.bewegen(control.turm1_weiss, 3, 4);
-          control.turm1_weiss.berechneFelder();
+//          control.bewegen(control.turm1_weiss, 3, 4);
+//          control.turm1_weiss.berechneFelder();
+
+//            control.bewegen(control.dame_schwarz, 3, 5);
+//            control.dame_schwarz.berechneFelder();
+          
+          control.bewegen(control.koenig_weiss, 3, 5);
+          control.koenig_weiss.berechneFelder();
 
 //          control.bewegen(control.springer1_schwarz, 4, 5);
 //          control.bewegen(control.bauer1_weiss, 3, 3);
@@ -283,6 +290,7 @@ public class ControlChess {
           
 //          control.bewegen(control.laeufer1_weiss, 5, 4);
 //          control.laeufer1_weiss.berechneFelder();
+          control.feld.graying();
 
      }
 
