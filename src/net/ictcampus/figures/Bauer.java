@@ -30,7 +30,74 @@ public class Bauer extends Figur {
      }
 
      public void berechneFelder() {
-
+    	 if(figurFarbe == "schwarz") {
+    		 if(yPos == 6 & field.getFelderJPanel(xPos, yPos - 1).getComponents().length < 1) {
+    			 if(field.getFelderJPanel(xPos, yPos - 2).getComponents().length < 1) {
+    				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
+    				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 - 2) * 111).setEnabled(true);
+    			 }
+    			 else {
+    				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
+    			 }
+    		 }
+    		 if(yPos - 1 >= 0 & xPos - 1 >= 0) {
+    			 if(field.getFelderJPanel(xPos - 1, yPos - 1).getComponents().length >= 1) {
+    				 for (Figur figur : field.getControl().getFiguren_weiss()) {
+                         if (figur.getxPos() == xPos - 1 & figur.getyPos() == yPos - 1) {
+                        	 field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
+                         }
+    				 }
+    			 }
+    		 }
+    		 if(yPos - 1 >= 0 & xPos + 1 < 8) {
+    			 if(field.getFelderJPanel(xPos + 1, yPos - 1).getComponents().length >= 1) {
+    				 for (Figur figur : field.getControl().getFiguren_weiss()) {
+                         if (figur.getxPos() == xPos + 1 & figur.getyPos() == yPos - 1) {
+                        	 field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
+                         }
+    				 }
+    			 }
+    		 }
+    		 if(yPos - 1 >= 0) {
+    			 if(field.getFelderJPanel(xPos, yPos - 1).getComponents().length < 1) {
+        			 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true); 
+    			 }
+    		 }
+    	 }
+    	 else if(figurFarbe == "weiss") {
+    		 if(yPos == 1 & field.getFelderJPanel(xPos, yPos + 1).getComponents().length < 1) {
+    			 if(field.getFelderJPanel(xPos, yPos + 2).getComponents().length < 1) {
+    				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+    				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 + 2) * 111).setEnabled(true);
+    			 }
+    			 else {
+    				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+    			 }
+    		 }
+    		 if(yPos + 1 < 8 & xPos - 1 >= 0) {
+    			 if(field.getFelderJPanel(xPos - 1, yPos + 1).getComponents().length >= 1) { 
+    				 for (Figur figur : field.getControl().getFiguren_schwarz()) {
+                         if (figur.getxPos() == xPos - 1 & figur.getyPos() == yPos + 1) {
+                        	 field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+                         }
+    				 }
+    			 }
+    		 }
+    		 if(yPos + 1 < 8 & xPos + 1 < 8) {
+    			 if(field.getFelderJPanel(xPos + 1, yPos + 1).getComponents().length >= 1) {
+    				 for (Figur figur : field.getControl().getFiguren_schwarz()) {
+                         if (figur.getxPos() == xPos + 1 & figur.getyPos() == yPos + 1) {
+                        	 field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+                         }
+    				 }
+    			 }
+    		 }
+    		 if(yPos + 1 < 8) {
+    			 if(field.getFelderJPanel(xPos, yPos + 1).getComponents().length < 1) {
+    				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);	 
+    			 }
+    		 }
+    	 }
      }
 
      @Override

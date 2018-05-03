@@ -1,4 +1,3 @@
-
 package GameControl;
 
 import java.util.ArrayList;
@@ -246,11 +245,33 @@ public class ControlChess {
 
      public static void main(String[] args) {
           ControlChess control = new ControlChess();
-
-          control.bewegen(control.springer1_schwarz, 4, 5);
-          control.bewegen(control.bauer1_weiss, 3, 3);
-          control.bewegen(control.bauer2_weiss, 5, 3);
-          control.springer1_schwarz.berechneFelder();
+//          control.bewegen(control.turm1_schwarz, 2, 2);
+//          control.turm1_schwarz.berechneFelder();
+//          control.springer1_schwarz.berechneFelder();
+//          control.bewegen(control.springer1_schwarz, 4, 5);
+//          control.bewegen(control.bauer1_weiss, 3, 3);
+//          control.bewegen(control.bauer2_weiss, 5, 3);
+//          control.springer1_schwarz.berechneFelder();
+//          control.bewegen(control.bauer4_weiss, 0, 5);
+//          control.bewegen(control.bauer5_weiss, 1, 5);
+//          control.bewegen(control.bauer6_weiss, 2, 5);
+//          control.bewegen(control.bauer7_weiss, 3, 5);
+//          control.bewegen(control.bauer4_schwarz, 0, 2);
+//          control.bewegen(control.bauer5_schwarz, 1, 2);
+//          control.bewegen(control.bauer6_schwarz, 2, 2);
+//          control.bewegen(control.bauer7_schwarz, 3, 2);
+//          control.bewegen(control.bauer8_schwarz, 6, 1);
+//          control.bewegen(control.bauer2_schwarz, 6, 2);
+          control.bewegen(control.koenig_schwarz, 3, 3);
+          control.bewegen(control.koenig_weiss, 5, 5);
+          
+          control.koenig_schwarz.berechneFelder();
+          control.koenig_weiss.berechneFelder();
+//          control.bauer1_schwarz.berechneFelder();
+//          control.bauer3_schwarz.berechneFelder();
+//          control.bauer8_schwarz.berechneFelder();
+//          control.bauer1_weiss.berechneFelder();
+//          control.bauer3_weiss.berechneFelder();
      }
 
      public ArrayList<Figur> getFiguren_schwarz() {
