@@ -246,11 +246,11 @@ public class ControlChess {
 
      public static void main(String[] args) {
           ControlChess control = new ControlChess();
-          control.bewegen(control.koenig_schwarz, 1, 5);
-          control.bewegen(control.dame_schwarz, 5, 2);
-          control.bewegen(control.turm1_schwarz, 3, 4);
-          control.bewegen(control.bauer1_weiss, 5, 5);
-          control.turm1_schwarz.berechneFelder();
+//          control.bewegen(control.koenig_schwarz, 1, 5);
+//          control.bewegen(control.dame_schwarz, 5, 2);
+//          control.bewegen(control.turm1_schwarz, 3, 4);
+//          control.bewegen(control.bauer1_weiss, 5, 5);
+//          control.turm1_schwarz.berechneFelder();
      }
 
      public ArrayList<Figur> getFiguren_schwarz() {
