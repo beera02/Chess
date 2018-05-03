@@ -31,35 +31,175 @@ public class Springer extends Figur{
 	public void bewegen() {
 
 	}
-	public void brerechneFelder() {
-		if(this.getxPos() + 2 < 8 & this.getyPos() - 1 >= 0) {
-			if(field.getFelderJpanel()) {
-				
+	public void berechneFelder() {
+		if(xPos + 2 < 8 & yPos - 1 >= 0) {
+			if(field.getFelderJPanel(xPos + 2, yPos - 1).getComponents().length >= 1) {
+				if(figurFarbe == "schwarz") {
+					for(Figur figur:field.getControl().getFiguren_weiss()) {
+						if(figur.getxPos() == xPos + 2 & figur.getyPos() == yPos - 1) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 + 2) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
+						}
+					}
+				}
+				else {
+					for(Figur figur:field.getControl().getFiguren_schwarz()) {
+						if(figur.getxPos() == xPos + 2 & figur.getyPos() == yPos - 1) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 + 2) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
+						}
+					}
+				}
+			}
+			else {
+				field.getSpielfeldPanel().getComponentAt((xPos + 1 + 2) * 124, (yPos + 1 -1) * 111).setEnabled(true);
 			}
 		}
-		if(this.getxPos() + 2 < 8 & this.getyPos() + 1 < 8) {
-			
+		if(xPos + 2 < 8 & yPos + 1 < 8) {
+			if(field.getFelderJPanel(xPos + 2, yPos + 1).getComponents().length >= 1) {
+				if(figurFarbe == "schwarz") {
+					for(Figur figur:field.getControl().getFiguren_weiss()) {
+						if(figur.getxPos() == xPos + 2 & figur.getyPos() == yPos + 1) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 + 2) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+						}
+					}
+				}
+				else {
+					for(Figur figur:field.getControl().getFiguren_schwarz()) {
+						if(figur.getxPos() == xPos + 2 & figur.getyPos() == yPos + 1) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 + 2) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+						}
+					}
+				}
+			}
+			else {
+				field.getSpielfeldPanel().getComponentAt((xPos + 1 + 2) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+			}
 		}
-		if(this.getxPos() - 2 >= 0 & this.getyPos() - 1 >= 0) {
-			
-		}
-		if(this.getxPos() - 2 >= 0 & this.getyPos() + 1 < 8) {
-			
-		}
-		if(this.getyPos() - 2 >= 0 & this.getxPos() + 1 < 8) {
-			
-		}
-		if(this.getyPos() - 2 >= 0 & this.getxPos() - 1 >= 0) {
-			
-		}
-		if(this.getyPos() + 2 < 8 & this.getxPos() + 1 < 8) {
-			
-		}
-		if(this.getyPos() + 2 < 8 & this.getxPos() - 1 >= 0) {
-			
-		}
-	}
-	public void berechneFelder() {
 		
+		if(xPos - 2 >= 0 & xPos - 1 >= 0) {
+			if(field.getFelderJPanel(xPos - 2, yPos - 1).getComponents().length >= 1) {
+				if(figurFarbe == "schwarz") {
+					for(Figur figur:field.getControl().getFiguren_weiss()) {
+						if(figur.getxPos() == xPos - 2 & figur.getyPos() == yPos - 1) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 - 2) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
+						}
+					}
+				}
+				else {
+					for(Figur figur:field.getControl().getFiguren_schwarz()) {
+						if(figur.getxPos() == xPos - 2 & figur.getyPos() == yPos - 1) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 - 2) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
+						}
+					}
+				}
+			}
+			else {
+				field.getSpielfeldPanel().getComponentAt((xPos + 1 - 2) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
+			}
+		}
+		if(xPos - 2 >= 0 & yPos + 1 < 8) {
+			if(field.getFelderJPanel(xPos - 2, yPos + 1).getComponents().length >= 1) {
+				if(figurFarbe == "schwarz") {
+					for(Figur figur:field.getControl().getFiguren_weiss()) {
+						if(figur.getxPos() == xPos - 2 & figur.getyPos() == yPos + 1) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 - 2) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+						}
+					}
+				}
+				else {
+					for(Figur figur:field.getControl().getFiguren_schwarz()) {
+						if(figur.getxPos() == xPos - 2 & figur.getyPos() == yPos + 1) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 - 2) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+						}
+					}
+				}
+			}
+			else {
+				field.getSpielfeldPanel().getComponentAt((xPos + 1 - 2) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
+			}
+		}
+		if(yPos - 2 >= 0 & xPos + 1 < 8) {
+			if(field.getFelderJPanel(xPos + 1, yPos - 2).getComponents().length >= 1) {
+				if(figurFarbe == "schwarz") {
+					for(Figur figur:field.getControl().getFiguren_weiss()) {
+						if(figur.getxPos() == xPos + 1 & figur.getyPos() == yPos - 2) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 - 2) * 111).setEnabled(true);
+						}
+					}
+				}
+				else {
+					for(Figur figur:field.getControl().getFiguren_schwarz()) {
+						if(figur.getxPos() == xPos + 1 & figur.getyPos() == yPos - 2) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 - 2) * 111).setEnabled(true);
+						}
+					}
+				}
+			}
+			else {
+				field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 - 2) * 111).setEnabled(true);
+			}
+		}
+		if(yPos - 2 >= 0 & xPos - 1 >= 0) {
+			if(field.getFelderJPanel(xPos - 1, yPos - 2).getComponents().length >= 1) {
+				if(figurFarbe == "schwarz") {
+					for(Figur figur:field.getControl().getFiguren_weiss()) {
+						if(figur.getxPos() == xPos - 1 & figur.getyPos() == yPos - 2) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 - 2) * 111).setEnabled(true);
+						}
+					}
+				}
+				else {
+					for(Figur figur:field.getControl().getFiguren_schwarz()) {
+						if(figur.getxPos() == xPos - 1 & figur.getyPos() == yPos - 2) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 - 2) * 111).setEnabled(true);
+						}
+					}
+				}
+			}
+			else {
+				field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 - 2) * 111).setEnabled(true);
+			}
+		}
+		if(yPos + 2 < 8 & xPos + 1 < 8) {
+			if(field.getFelderJPanel(xPos + 1, yPos + 2).getComponents().length >= 1) {
+				if(figurFarbe == "schwarz") {
+					for(Figur figur:field.getControl().getFiguren_weiss()) {
+						if(figur.getxPos() == xPos + 1 & figur.getyPos() == yPos + 2) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 + 2) * 111).setEnabled(true);
+						}
+					}
+				}
+				else {
+					for(Figur figur:field.getControl().getFiguren_schwarz()) {
+						if(figur.getxPos() == xPos + 1 & figur.getyPos() == yPos + 2) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 + 2) * 111).setEnabled(true);
+						}
+					}
+				}
+			}
+			else {
+				field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 + 2) * 111).setEnabled(true);
+			}
+		}
+		if(yPos + 2 < 8 & xPos - 1 >= 0) {
+			if(field.getFelderJPanel(xPos - 1, yPos + 2).getComponents().length >= 1) {
+				if(figurFarbe == "schwarz") {
+					for(Figur figur:field.getControl().getFiguren_weiss()) {
+						if(figur.getxPos() == xPos - 1 & figur.getyPos() == yPos + 2) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 + 2) * 111).setEnabled(true);
+						}
+					}
+				}
+				else {
+					for(Figur figur:field.getControl().getFiguren_schwarz()) {
+						if(figur.getxPos() == xPos - 1 & figur.getyPos() == yPos + 2) {
+							field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 + 2) * 111).setEnabled(true);
+						}
+					}
+				}
+			}
+			else {
+				field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 + 2) * 111).setEnabled(true);
+			}
+		}
 	}
 }
