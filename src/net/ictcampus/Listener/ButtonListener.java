@@ -50,9 +50,22 @@ public class ButtonListener implements ActionListener {
 			else {
 				ta.setText("Der Spieler 2 heisst nun " + spieler2.getSpielerName() + "!\n" + spieler1.getSpielerName() + ": Sie wurden ausgewählt, das Spiel mit Weiss zu starten!");
 			}
-			control.wechsleSpieler("schwarz");
-			tf.setEnabled(false);
-			b.setEnabled(false); 
+			runde = 3;
+		}
+		else if(runde == 3) {
+			runde = 4;
+			while((control.getFiguren_schwarz().contains(control.koenig_schwarz)) & (control.getFiguren_weiss().contains(control.koenig_weiss))) {
+				if(runde == 4) {
+					control.wechsleSpieler("weiss");
+					
+					runde = 5;
+				}
+				if(runde == 5) {
+					control.wechsleSpieler("schwarz");
+					
+					runde = 4;
+				}
+			}
 		}
 	}
 }
