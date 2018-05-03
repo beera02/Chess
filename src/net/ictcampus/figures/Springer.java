@@ -33,7 +33,7 @@ public class Springer extends Figur{
 	}
 	public void brerechneFelder() {
 		if(this.getxPos() + 2 < 8 & this.getyPos() - 1 >= 0) {
-			if(field.getFelderJPanel()) {
+			if(field.getFelderJpanel()) {
 				
 			}
 		}

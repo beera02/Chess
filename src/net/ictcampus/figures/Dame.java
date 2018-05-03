@@ -31,4 +31,9 @@ public class Dame extends Figur{
 	public void berechneFelder() {
 		
 	}
+     @Override
+     public void bewegen() {
+          // TODO Auto-generated method stub
+          
+     }
 }
