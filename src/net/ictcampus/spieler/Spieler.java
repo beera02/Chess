@@ -1,23 +1,18 @@
 package net.ictcampus.Spieler;
 
-import net.ictcampus.GUI.FeldGUI;
-import net.ictcampus.figures.Figur;
-
+/**
+ * Klasse Spieler
+ * Klasse um den Namen eines Spielers zu speichern
+ * @author beera
+ * @Version 1.0
+ */
 public class Spieler {
-	private String spielerFarbe;
-	private Figur[] figuren;
-	private Figur[] besiegteFiguren;
 	private String spielerName;
-	
-	public void play() {
-		
-	}
-	public void entferneFigur() {
-		
-	}
+
 	public String getSpielerName() {
 		return spielerName;
 	}
+
 	public void setSpielerName(String spielerName) {
 		this.spielerName = spielerName;
 	}

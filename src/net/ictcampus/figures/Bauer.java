@@ -1,4 +1,3 @@
-
 package net.ictcampus.figures;
 
 import java.awt.Image;
@@ -9,28 +8,42 @@ import javax.swing.ImageIcon;
 
 import net.ictcampus.GUI.FeldGUI;
 
+/**
+ * Klasse Bauer, Unterklasse von Figur
+ * Klasse um einen Bauer mit Farbe und Bild zu erstellen, und die begehbaren Felder zu aktivieren
+ * @author beera
+ * @version 1.0
+ */
 public class Bauer extends Figur {
-
-     // Instanzvariablen
      private Image bauer;
-
-     // Konstruktor
+     
+     /**
+      * Konstruktor der Klasse Bauer, der festlegt welche EIgenschaften beim erstellen einer Instanz mitgegeben werden müssen
+      * @param farbe
+      * @param field
+      */
      public Bauer(String farbe, FeldGUI field) {
           super(field);
           this.figurName = "Bauer";
           this.figurFarbe = farbe;
           
+          //Versucht das Bild des Bauers hereinzuladen
           try {
                bauer = ImageIO.read(getClass().getResource("bauer_" + farbe + ".png"));
-          } catch (IOException e) {
+          }
+          catch (IOException e) {
                System.out.println(e);
           }
-          
           this.symbol = new ImageIcon(bauer);
      }
-
+     
+     /**
+      * Methode um alle begehbaren Felder des aktuell ausgewählten Bauers aktiv zu machen
+      */
      public void berechneFelder() {
+    	 //Wenn es ein schwarzer Bauer ist
     	 if(figurFarbe == "schwarz") {
+    		 //Startzustand, entweder 2 oder 1 nach vorne
     		 if(yPos == 6 & field.getFelderJPanel(xPos, yPos - 1).getComponents().length < 1) {
     			 if(field.getFelderJPanel(xPos, yPos - 2).getComponents().length < 1) {
     				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
@@ -40,6 +53,7 @@ public class Bauer extends Figur {
     				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
     			 }
     		 }
+    		 //Schräg einen gegner schlagen
     		 if(yPos - 1 >= 0 & xPos - 1 >= 0) {
     			 if(field.getFelderJPanel(xPos - 1, yPos - 1).getComponents().length >= 1) {
     				 for (Figur figur : field.getControl().getFiguren_weiss()) {
@@ -49,6 +63,7 @@ public class Bauer extends Figur {
     				 }
     			 }
     		 }
+    		 //Schräg einen Gegner schlagen
     		 if(yPos - 1 >= 0 & xPos + 1 < 8) {
     			 if(field.getFelderJPanel(xPos + 1, yPos - 1).getComponents().length >= 1) {
     				 for (Figur figur : field.getControl().getFiguren_weiss()) {
@@ -58,13 +73,16 @@ public class Bauer extends Figur {
     				 }
     			 }
     		 }
+    		 //Ein Feld nach vorne bewegen
     		 if(yPos - 1 >= 0) {
     			 if(field.getFelderJPanel(xPos, yPos - 1).getComponents().length < 1) {
         			 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true); 
     			 }
     		 }
     	 }
+    	 //Wenn es ein weisser Bauer ist
     	 else if(figurFarbe == "weiss") {
+    		 //Startzustand, entweder 1 oder 2 nach vorne
     		 if(yPos == 1 & field.getFelderJPanel(xPos, yPos + 1).getComponents().length < 1) {
     			 if(field.getFelderJPanel(xPos, yPos + 2).getComponents().length < 1) {
     				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
@@ -74,6 +92,7 @@ public class Bauer extends Figur {
     				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
     			 }
     		 }
+    		 //schräg einen Gegner schlagen
     		 if(yPos + 1 < 8 & xPos - 1 >= 0) {
     			 if(field.getFelderJPanel(xPos - 1, yPos + 1).getComponents().length >= 1) { 
     				 for (Figur figur : field.getControl().getFiguren_schwarz()) {
@@ -83,6 +102,7 @@ public class Bauer extends Figur {
     				 }
     			 }
     		 }
+    		 //schräg einen Gegner schlagen
     		 if(yPos + 1 < 8 & xPos + 1 < 8) {
     			 if(field.getFelderJPanel(xPos + 1, yPos + 1).getComponents().length >= 1) {
     				 for (Figur figur : field.getControl().getFiguren_schwarz()) {
@@ -92,18 +112,12 @@ public class Bauer extends Figur {
     				 }
     			 }
     		 }
+    		 //ein Feld nach vorne bewegen
     		 if(yPos + 1 < 8) {
     			 if(field.getFelderJPanel(xPos, yPos + 1).getComponents().length < 1) {
     				 field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);	 
     			 }
     		 }
     	 }
-     }
-
-     @Override
-     public void bewegen() {
-          // TODO Auto-generated method stub
-          
-     }
-     
+     }     
 }

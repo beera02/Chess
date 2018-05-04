@@ -5,10 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
-import GameControl.ControlChess;
 import net.ictcampus.figures.Figur;
+import net.ictcampus.gamecontrol.ControlChess;
 
 public class SpielfeldPanelButtonListener implements ActionListener {
 
