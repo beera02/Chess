@@ -1,4 +1,3 @@
-
 package net.ictcampus.figures;
 
 import java.awt.Image;
@@ -9,12 +8,20 @@ import javax.swing.ImageIcon;
 
 import net.ictcampus.GUI.FeldGUI;
 
+/**
+ * Klasse Bauer, Unterklasse von Figur
+ * Klasse um einen Bauer mit Farbe und Bild zu erstellen, und die begehbaren Felder zu aktivieren
+ * @author beera
+ * @version 1.0
+ */
 public class Bauer extends Figur {
-
-     // Instanzvariablen
      private Image bauer;
-
-     // Konstruktor
+     
+     /**
+      * Konstruktor der Klasse Bauer, der festlegt welche EIgenschaften beim erstellen einer Instanz mitgegeben werden müssen
+      * @param farbe
+      * @param field
+      */
      public Bauer(String farbe, FeldGUI field) {
           super(field);
           this.figurName = "Bauer";
@@ -22,13 +29,16 @@ public class Bauer extends Figur {
           
           try {
                bauer = ImageIO.read(getClass().getResource("bauer_" + farbe + ".png"));
-          } catch (IOException e) {
+          }
+          catch (IOException e) {
                System.out.println(e);
           }
-          
           this.symbol = new ImageIcon(bauer);
      }
-
+     
+     /**
+      * Methode um alle begehbaren Felder des aktuell ausgewählten Bauers aktiv zu machen
+      */
      public void berechneFelder() {
     	 if(figurFarbe == "schwarz") {
     		 if(yPos == 6 & field.getFelderJPanel(xPos, yPos - 1).getComponents().length < 1) {
@@ -98,12 +108,5 @@ public class Bauer extends Figur {
     			 }
     		 }
     	 }
-     }
-
-     @Override
-     public void bewegen() {
-          // TODO Auto-generated method stub
-          
-     }
-     
+     }     
 }

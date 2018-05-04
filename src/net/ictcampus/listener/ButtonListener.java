@@ -1,4 +1,4 @@
-package net.ictcampus.Listener;
+package net.ictcampus.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,9 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import net.ictcampus.Spieler.Spieler;
 import net.ictcampus.figures.Figur;
-import GameControl.ControlChess;
+import net.ictcampus.gamecontrol.ControlChess;
+import net.ictcampus.spieler.Spieler;
 
 public class ButtonListener implements ActionListener {
 	private JTextArea ta;
