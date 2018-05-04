@@ -8,12 +8,23 @@ package net.ictcampus.Spieler;
  */
 public class Spieler {
 	private String spielerName;
+	private String spielerFarbe;
 
-	public String getSpielerName() {
+	
+     public String getSpielerName() {
 		return spielerName;
 	}
 
 	public void setSpielerName(String spielerName) {
 		this.spielerName = spielerName;
 	}
+     public String getSpielerFarbe() {
+          return spielerFarbe;
+     }
+
+     
+     public void setSpielerFarbe(String spielerFarbe) {
+          this.spielerFarbe = spielerFarbe;
+     }
+
 }

@@ -274,4 +274,24 @@ public class FeldGUI extends JFrame {
 	public void setControl(ControlChess control) {
 		this.control = control;
 	}
+
+     
+     public Spieler getSpieler1() {
+          return spieler1;
+     }
+
+     
+     public void setSpieler1(Spieler spieler1) {
+          this.spieler1 = spieler1;
+     }
+
+     
+     public Spieler getSpieler2() {
+          return spieler2;
+     }
+
+     
+     public void setSpieler2(Spieler spieler2) {
+          this.spieler2 = spieler2;
+     }
 }

@@ -2,6 +2,9 @@ package net.ictcampus.gamecontrol;
 
 import java.util.ArrayList;
 
+import javax.security.auth.login.FailedLoginException;
+
+import javafx.scene.control.Tab;
 import net.ictcampus.GUI.FeldGUI;
 import net.ictcampus.figures.Bauer;
 import net.ictcampus.figures.Dame;
@@ -241,6 +244,12 @@ public class ControlChess {
 						.setEnabled(false);
 
 			}
+			if (feld.getSpieler1().getSpielerFarbe() == "weiss") {
+			     feld.ta1.setText(feld.getSpieler1().getSpielerName()+" ist am Zug.");
+			}
+			else {
+			     feld.ta1.setText(feld.getSpieler2().getSpielerName()+" ist am Zug.");
+			}
 			feld.graying();
 		} else {
 			for (Figur figur : figuren_schwarz) {
@@ -251,6 +260,12 @@ public class ControlChess {
 				feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124, (figur.getyPos() + 1) * 111)
 						.setEnabled(false);
 			}
+	            if (feld.getSpieler1().getSpielerFarbe() == "schwarz") {
+	                    feld.ta1.setText(feld.getSpieler1().getSpielerName()+" ist am Zug.");
+	               }
+	               else {
+	                    feld.ta1.setText(feld.getSpieler2().getSpielerName()+" ist am Zug.");
+	               }
 			feld.graying();
 		}
 	}
@@ -264,7 +279,6 @@ public class ControlChess {
 	public void bewegen(Figur figur, int x, int y) {
 		feld.entferneFigur(figur.getxPos(), figur.getyPos());
 		feld.setzeFigur(figur, x, y);
-
 	}
 	
 	/**

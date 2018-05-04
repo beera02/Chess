@@ -43,7 +43,8 @@ public class Laeufer extends Figur {
 	public void berechneFelder() {
 		int calcPos = 0;
 		int xPosition = xPos;
-
+          calcPos = 8 * yPos + xPos;
+          field.getSpielfeldPanel().getComponent(calcPos).setEnabled(true);
 		// Check Diagonal North East
 		for (int i = yPos - 1; i >= 0; i--) {
 			xPosition++;
@@ -144,7 +145,7 @@ public class Laeufer extends Figur {
 		xPosition = xPos;
 		for (int i = yPos + 1; i < 8; i++) {
 			xPosition--;
-			if (xPosition >= 8) {
+			if (xPosition < 0) {
 				break;
 			}
 			System.out.println("i = " + i);
