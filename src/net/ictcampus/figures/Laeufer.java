@@ -35,8 +35,9 @@ public class Laeufer extends Figur {
 
           // Check Diagonal North East
           for (int i = yPos - 1; i >= 0; i--) {
-               if (xPosition < 7) {
-                    xPosition++;
+               xPosition++;
+               if (xPosition >= 8) {
+                    break;
                }
                calcPos = (8 * i) + xPosition;
                if (field.getFelderJPanel(xPosition, i).getComponents().length < 1) {
@@ -65,8 +66,9 @@ public class Laeufer extends Figur {
           // Check Diagonal North West
           xPosition = xPos;
           for (int i = yPos - 1; i >= 0; i--) {
-               if (xPosition > 0) {
-                    xPosition--;
+               xPosition--;
+               if (xPosition < 0) {
+                    break;
                }
                calcPos = (8 * i) + xPosition;
                System.out.println(calcPos + "postion");
@@ -97,8 +99,9 @@ public class Laeufer extends Figur {
           // Check Diagonal South East
           xPosition = xPos;
           for (int i = yPos + 1; i < 8; i++) {
-               if (xPosition < 7) {
-                    xPosition++;
+               xPosition++;
+               if (xPosition >= 8) {
+                    break;
                }
                System.out.println("i = " + i);
                calcPos = (8 * i) + xPosition;
@@ -129,8 +132,9 @@ public class Laeufer extends Figur {
           // Check Diagonal South West
           xPosition = xPos;
           for (int i = yPos + 1; i < 8; i++) {
-               if (xPosition > 0) {
-                    xPosition--;
+               xPosition--;
+               if (xPosition >= 8) {
+                    break;
                }
                System.out.println("i = " + i);
                calcPos = (8 * i) + xPosition;
