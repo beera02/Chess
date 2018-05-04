@@ -1,5 +1,9 @@
 package net.ictcampus.threads;
 
+import java.io.File;
+
+import javax.activation.FileDataSource;
+
 import net.ictcampus.GUI.FeldGUI;
 
 /**

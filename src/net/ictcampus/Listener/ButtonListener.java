@@ -1,3 +1,4 @@
+
 package net.ictcampus.Listener;
 
 import java.awt.event.ActionEvent;
@@ -12,8 +13,9 @@ import net.ictcampus.figures.Figur;
 import net.ictcampus.gamecontrol.ControlChess;
 
 /**
- * Klasse ButtonListener, implementiert ActionListener
- * Klasse um den Anfang eines Spieles zu regeln und die Namen der Spieler festzulegen
+ * Klasse ButtonListener, implementiert ActionListener Klasse um den Anfang
+ * eines Spieles zu regeln und die Namen der Spieler festzulegen
+ * 
  * @author beera
  * @version 1.0
  */

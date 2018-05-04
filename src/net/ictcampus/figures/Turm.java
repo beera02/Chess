@@ -41,7 +41,8 @@ public class Turm extends Figur {
 	 */
 	public void berechneFelder() {
 		int calcPos = 0;
-
+		calcPos = 8 * yPos + xPos;
+		field.getSpielfeldPanel().getComponent(calcPos).setEnabled(true);
 		// Check Right Side
 		for (int i = xPos + 1; i < 8; i++) {
 			calcPos = (8 * (yPos)) + i;
