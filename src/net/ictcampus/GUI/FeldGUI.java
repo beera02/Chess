@@ -39,7 +39,7 @@ public class FeldGUI extends JFrame {
      private Spieler spieler2 = new Spieler();
      private Color hellBraun = new Color(220, 191, 157);
      private Color dunkelBraun = new Color(180, 92, 52);
-     private Color dunkelGrau = new Color(125, 64, 36);
+     private Color dunkelGrau = new Color(84, 43, 24);
      private Color hellGrau = new Color(163, 133, 109);
      private Color transparent = new Color(0, 0, 0, 0);
      private JPanel overlay = new JPanel();

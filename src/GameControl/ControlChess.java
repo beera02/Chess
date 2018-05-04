@@ -254,9 +254,10 @@ public class ControlChess {
 
      public static void main(String[] args) {
           ControlChess control = new ControlChess();
-//          control.bewegen(control.dame_schwarz, 5, 4);
-//          control.dame_schwarz.berechneFelder();
-//          control.feld.graying();
+//          control.bewegen(control.springer1_schwarz, 2, 5);
+          control.bewegen(control.turm1_schwarz, 3, 4);
+          control.turm1_schwarz.berechneFelder();
+          control.feld.graying();
 
      }
 
