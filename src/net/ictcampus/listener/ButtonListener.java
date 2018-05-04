@@ -11,6 +11,12 @@ import net.ictcampus.figures.Figur;
 import net.ictcampus.gamecontrol.ControlChess;
 import net.ictcampus.spieler.Spieler;
 
+/**
+ * Klasse ButtonListener, implementiert ActionListener
+ * Klasse um den Anfang eines Spieles zu regeln und die Namen der Spieler festzulegen
+ * @author beera
+ * @version 1.0
+ */
 public class ButtonListener implements ActionListener {
 	private JTextArea ta;
 	private JTextField tf;
@@ -21,6 +27,15 @@ public class ButtonListener implements ActionListener {
 	private int runde = 1;
 	private ControlChess control;
 	
+	/**
+	 * Konstruktor um festzulegen welche Informationen bei der Erstellung einer Instanz mitgegeben werden müssen
+	 * @param ta Textarea
+	 * @param tf TextFeld
+	 * @param b OK! Button
+	 * @param spieler1 Erster SPieler
+	 * @param spieler2 Zweiter SPieler
+	 * @param control ControlChess Objekt
+	 */
 	public ButtonListener(JTextArea ta, JTextField tf, JButton b, Spieler spieler1, Spieler spieler2, ControlChess control) {
 		this.ta = ta;
 		this.tf = tf;
@@ -30,6 +45,9 @@ public class ButtonListener implements ActionListener {
 		this.control = control;
 	}
 	
+	/**
+	 * Methode welche auf den OK! Button hört und je nach dem in welcher Runde man sich befindet, anders handelt
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if((e.getActionCommand() == "OK!") & (runde == 1) & !(tf.getText().equals(""))) {

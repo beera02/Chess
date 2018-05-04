@@ -26,7 +26,8 @@ public class Turm extends Figur {
 		super(field);
 		this.figurName = "Turm";
 		this.figurFarbe = farbe;
-
+		
+		//Versuch tdas Bild des Turms hereinzuladen
 		try {
 			turm = ImageIO.read(getClass().getResource("turm_" + farbe + ".png"));
 		} catch (IOException e) {
@@ -48,7 +49,6 @@ public class Turm extends Figur {
 				field.getSpielfeldPanel().getComponent(calcPos).setEnabled(true);
 				field.repaint();
 			}
-
 			else {
 				if (figurFarbe == "schwarz") {
 					for (Figur figur : field.getControl().getFiguren_weiss()) {

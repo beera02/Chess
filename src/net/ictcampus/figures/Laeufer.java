@@ -26,7 +26,8 @@ public class Laeufer extends Figur {
 		super(field);
 		this.figurName = "Läufer";
 		this.figurFarbe = farbe;
-
+		
+		//Versucht das Bild des Laeufers hereinzuladen
 		try {
 			laeufer = ImageIO.read(getClass().getResource("laeufer_" + farbe + ".png"));
 		} catch (IOException e) {

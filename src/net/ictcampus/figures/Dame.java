@@ -27,7 +27,8 @@ public class Dame extends Figur {
 		super(field);
 		this.figurName = "Dame";
 		this.figurFarbe = farbe;
-
+		
+		//Versucht das Bild der Dame hereinzuladen
 		try {
 			dame = ImageIO.read(getClass().getResource("dame_" + farbe + ".png"));
 		} catch (IOException e) {

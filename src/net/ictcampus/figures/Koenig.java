@@ -27,7 +27,8 @@ public class Koenig extends Figur {
 		super(field);
 		this.figurName = "König";
 		this.figurFarbe = farbe;
-
+		
+		//Versucht das Bild des Königs hereinzuladen
 		try {
 			koenig = ImageIO.read(getClass().getResource("koenig_" + farbe + ".png"));
 		} catch (IOException e) {
@@ -40,6 +41,7 @@ public class Koenig extends Figur {
 	 * Methode um alle begehbaren Felder des aktuell ausgewählten Koenigs aktiv zu machen
 	 */
 	public void berechneFelder() {
+		//Prüfen ob möglich gegen oben zu gehen/schlagen
 		if (yPos - 1 >= 0) {
 			if (field.getFelderJPanel(xPos, yPos - 1).getComponents().length < 1) {
 				field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
@@ -61,6 +63,7 @@ public class Koenig extends Figur {
 				}
 			}
 		}
+		//Prüfen ob möglich gegen rechts zu gehen/schlagen
 		if (xPos + 1 < 8) {
 			if (field.getFelderJPanel(xPos + 1, yPos).getComponents().length < 1) {
 				field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1) * 111).setEnabled(true);
@@ -82,6 +85,7 @@ public class Koenig extends Figur {
 				}
 			}
 		}
+		//Prüfen ob möglich gegen unten zu gehen/schlagen
 		if (yPos + 1 < 8) {
 			if (field.getFelderJPanel(xPos, yPos + 1).getComponents().length < 1) {
 				field.getSpielfeldPanel().getComponentAt((xPos + 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
@@ -103,6 +107,7 @@ public class Koenig extends Figur {
 				}
 			}
 		}
+		//Prüfen ob möglich gegen links zu gehen/schlagen
 		if (xPos - 1 >= 0) {
 			if (field.getFelderJPanel(xPos - 1, yPos).getComponents().length < 1) {
 				field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1) * 111).setEnabled(true);
@@ -124,6 +129,7 @@ public class Koenig extends Figur {
 				}
 			}
 		}
+		//Prüfen ob möglich gegen rechtsoben zu gehen/schlagen
 		if (xPos + 1 < 8 & yPos - 1 >= 0) {
 			if (field.getFelderJPanel(xPos + 1, yPos - 1).getComponents().length < 1) {
 				field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
@@ -145,6 +151,7 @@ public class Koenig extends Figur {
 				}
 			}
 		}
+		//Prüfen ob möglich gegen rechtsunten zu gehen/schlagen
 		if (xPos + 1 < 8 & yPos + 1 < 8) {
 			if (field.getFelderJPanel(xPos + 1, yPos + 1).getComponents().length < 1) {
 				field.getSpielfeldPanel().getComponentAt((xPos + 1 + 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
@@ -166,6 +173,7 @@ public class Koenig extends Figur {
 				}
 			}
 		}
+		//Prüfen ob möglich gegen linksunten zu gehen/schlagen
 		if (xPos - 1 >= 0 & yPos + 1 < 8) {
 			if (field.getFelderJPanel(xPos - 1, yPos + 1).getComponents().length < 1) {
 				field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 + 1) * 111).setEnabled(true);
@@ -187,6 +195,7 @@ public class Koenig extends Figur {
 				}
 			}
 		}
+		//Prüfen ob möglich gegen linksoben zu gehen/schlagen
 		if (xPos - 1 >= 0 & yPos - 1 >= 0) {
 			if (field.getFelderJPanel(xPos - 1, yPos - 1).getComponents().length < 1) {
 				field.getSpielfeldPanel().getComponentAt((xPos + 1 - 1) * 124, (yPos + 1 - 1) * 111).setEnabled(true);
