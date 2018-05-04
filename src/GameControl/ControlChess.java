@@ -257,6 +257,8 @@ public class ControlChess {
 //          control.bewegen(control.springer1_schwarz, 2, 5);
           control.bewegen(control.turm1_schwarz, 3, 4);
           control.turm1_schwarz.berechneFelder();
+          control.bewegen(control.laeufer2_weiss, 3, 5);
+          control.laeufer2_weiss.berechneFelder();
           control.feld.graying();
 
      }
