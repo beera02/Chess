@@ -16,6 +16,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.OverlayLayout;
 
+import org.omg.PortableServer.ServantLocatorPackage.CookieHolder;
+
 import GameControl.ControlChess;
 import javafx.scene.layout.Border;
 import net.ictcampus.Listener.ButtonListener;
@@ -37,6 +39,8 @@ public class FeldGUI extends JFrame {
      private Spieler spieler2 = new Spieler();
      private Color hellBraun = new Color(220, 191, 157);
      private Color dunkelBraun = new Color(180, 92, 52);
+     private Color dunkelGrau = new Color(125, 64, 36);
+     private Color hellGrau = new Color(163, 133, 109);
      private Color transparent = new Color(0, 0, 0, 0);
      private JPanel overlay = new JPanel();
 	 public JTextField tf1 = new JTextField();
@@ -114,6 +118,7 @@ public class FeldGUI extends JFrame {
           buttonPanel.setOpaque(false);
      }
      
+     
      public void erstelleSpielkontrolleGUI() {
     	 tf1.setPreferredSize(new Dimension(150, 25));
     	 ta1.setPreferredSize(new Dimension(350, 80));
@@ -177,6 +182,30 @@ public class FeldGUI extends JFrame {
          // felderJPanel[x][y].setVisible(true);
      }
      
+     public void graying() {
+          for (int i = 0; i < 64; i++) {
+               if (spielfeldPanel.getComponent(i).isEnabled() == false) {
+                    if (spielfeldPanel.getComponent(i).getBackground() == hellBraun) {
+                         spielfeldPanel.getComponent(i).setBackground(hellGrau);
+                    }
+                    else {
+                         spielfeldPanel.getComponent(i).setBackground(dunkelGrau);
+                    }
+               }
+          }
+     }
+     
+     public void coloring() {
+          for (int i = 0; i < 64; i++) {
+               if (spielfeldPanel.getComponent(i).getBackground() == dunkelGrau) {
+                    spielfeldPanel.getComponent(i).setBackground(dunkelBraun);
+               }
+               else if (spielfeldPanel.getComponent(i).getBackground() == hellGrau) {
+                    spielfeldPanel.getComponent(i).setBackground(hellBraun);
+               }
+          }
+     }
+     
      public void entferneFigur(int x, int y) {
           felderJPanel[x][y].removeAll();
      }
@@ -186,6 +215,12 @@ public class FeldGUI extends JFrame {
      }  
      public void spielStart() {
     	 ta1.setText("Willkommen beim Spiel Chess!\nSpieler 1: Gib deinen Namen im Textfeld links ein!");
+     }
+     
+     public void setAllButtonsToFalse() {
+          for (int i = 0; i < 64; i++) {
+               spielfeldPanel.getComponent(i).setEnabled(false);
+          }
      }
 
      
