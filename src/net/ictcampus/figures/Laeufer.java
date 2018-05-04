@@ -103,9 +103,8 @@ public class Laeufer extends Figur {
                if (xPosition >= 8) {
                     break;
                }
-               System.out.println("i = " + i);
                calcPos = (8 * i) + xPosition;
-               System.out.println("calcpos = "+calcPos);
+               System.out.println("TEST : "+field.getFelderJPanel(xPosition, i));
                if (field.getFelderJPanel(xPosition, i).getComponents().length < 1) {
                     field.getSpielfeldPanel().getComponent(calcPos).setEnabled(true);
                     field.repaint();

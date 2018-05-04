@@ -39,7 +39,7 @@ public class ButtonListener implements ActionListener {
 			ta.setText("Der Spieler 1 heisst nun " + spieler1.getSpielerName() + "!\nSpieler 2: Geben nun Sie Ihren Namen ein!");
 			
 		}
-		else if((e.getActionCommand() == "OK!") & (runde == 2) & !(tf.getText().equals(""))) {
+		if((e.getActionCommand() == "OK!") & (runde == 2) & !(tf.getText().equals(""))) {
 			spieler2.setSpielerName(tf.getText());
 			tf.setText(null);
 			randomStarter = Math.round(Math.random());
@@ -52,7 +52,7 @@ public class ButtonListener implements ActionListener {
 			}
 			runde = 3;
 		}
-		else if(runde == 3) {
+		if(runde == 3) {
 			runde = 4;
 			for(Figur figurschwarz:control.getFiguren_schwarz()) {
 				if(figurschwarz.equals(control.koenig_schwarz)) {

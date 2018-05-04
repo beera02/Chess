@@ -32,7 +32,6 @@ public class Dame extends Figur{
           int calcPos = (8 * yPos) + xPos;
           int xPosition = xPos;
           
-          field.getSpielfeldPanel().getComponent(calcPos).setEnabled(true);
 
           // Check Diagonal North East
           for (int i = yPos - 1; i >= 0; i--) {

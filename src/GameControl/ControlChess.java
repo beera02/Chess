@@ -1,10 +1,11 @@
 package GameControl;
 
-import java.awt.Color;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+
 import net.ictcampus.GUI.FeldGUI;
-import net.ictcampus.Listener.ButtonListener;
+import net.ictcampus.Listener.SpielfeldPanelButtonListener;
 import net.ictcampus.figures.Bauer;
 import net.ictcampus.figures.Dame;
 import net.ictcampus.figures.Figur;
@@ -13,7 +14,6 @@ import net.ictcampus.figures.Laeufer;
 import net.ictcampus.figures.Springer;
 import net.ictcampus.figures.Turm;
 import net.ictcampus.threads.aktualisiereFeld;
-import sun.management.ConnectorAddressLink;
 
 public class ControlChess {
 
@@ -60,12 +60,12 @@ public class ControlChess {
      public Figur bauer8_weiss;
 
      public ControlChess() {
-          ausgangslage();
           feld = new FeldGUI(this);
           ausgangslage();
           initField();
           thread = new aktualisiereFeld(feld);
           thread.start();
+
      }
 
      public void ausgangslage() {
@@ -232,6 +232,7 @@ public class ControlChess {
                               (figur.getyPos() + 1) * 111).setEnabled(false);
                     
                }
+               feld.graying();
           } else {
                for (Figur figur : figuren_schwarz) {
                     feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124,
@@ -241,7 +242,7 @@ public class ControlChess {
                     feld.getSpielfeldPanel().getComponentAt((figur.getxPos() + 1) * 124,
                               (figur.getyPos() + 1) * 111).setEnabled(false);
                }
-               feld.repaint();
+               feld.graying();
                
           }
      }
@@ -254,12 +255,7 @@ public class ControlChess {
 
      public static void main(String[] args) {
           ControlChess control = new ControlChess();
-//          control.bewegen(control.springer1_schwarz, 2, 5);
-          control.bewegen(control.turm1_schwarz, 3, 4);
-          control.turm1_schwarz.berechneFelder();
-          control.bewegen(control.laeufer2_weiss, 3, 5);
-          control.laeufer2_weiss.berechneFelder();
-          control.feld.graying();
+//          control.bewegen(control.bauer3_weiss, 3, 4);
 
      }
 
@@ -278,5 +274,10 @@ public class ControlChess {
      public void setFiguren_weiss(ArrayList<Figur> figuren_weiss) {
           this.figuren_weiss = figuren_weiss;
      }
+     
+     public FeldGUI getFeld() {
+          return feld;
+     }
+
 
 }

@@ -21,6 +21,7 @@ import org.omg.PortableServer.ServantLocatorPackage.CookieHolder;
 import GameControl.ControlChess;
 import javafx.scene.layout.Border;
 import net.ictcampus.Listener.ButtonListener;
+import net.ictcampus.Listener.SpielfeldPanelButtonListener;
 import net.ictcampus.Spieler.Spieler;
 import net.ictcampus.figures.Figur;
 
@@ -85,6 +86,9 @@ public class FeldGUI extends JFrame {
                     //buttonSchwarz.setVisible(true);
                     buttonSchwarz.setEnabled(false);
                     buttonSchwarz.setBackground(dunkelBraun);
+                 
+                    buttonSchwarz.addActionListener(new SpielfeldPanelButtonListener(control));
+                    buttonWeiss.addActionListener(new SpielfeldPanelButtonListener(control));
                     if (i % 2 == 0) {
                          spielfeldPanel.add(buttonSchwarz);
                          spielfeldPanel.add(buttonWeiss);
