@@ -54,16 +54,28 @@ public class ButtonListener implements ActionListener {
 		}
 		else if(runde == 3) {
 			runde = 4;
-			while((control.getFiguren_schwarz().contains(control.koenig_schwarz)) & (control.getFiguren_weiss().contains(control.koenig_weiss))) {
-				if(runde == 4) {
-					control.wechsleSpieler("weiss");
-					
-					runde = 5;
-				}
-				if(runde == 5) {
-					control.wechsleSpieler("schwarz");
-					
-					runde = 4;
+			for(Figur figurschwarz:control.getFiguren_schwarz()) {
+				if(figurschwarz.equals(control.koenig_schwarz)) {
+					for(Figur figurweiss:control.getFiguren_weiss()) {
+						if(figurweiss.equals(control.koenig_weiss)) {
+							while(figurweiss.equals(control.koenig_weiss)){
+								if(runde == 4) {
+									control.wechsleSpieler("weiss");
+									for(Figur figurweiss1:control.getFiguren_weiss()) {
+										
+									}
+									runde = 5;
+									break;
+								}
+								if(runde == 5) {
+									control.wechsleSpieler("schwarz");
+									
+									runde = 4;
+									break;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
