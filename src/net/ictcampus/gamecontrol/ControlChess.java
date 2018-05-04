@@ -23,8 +23,6 @@ public class ControlChess {
 	private ArrayList<Figur> figuren_weiss = new ArrayList<Figur>();
 	private FeldGUI feld;
 	private aktualisiereFeld thread;
-	private String black = "schwarz";
-	private String white = "weiss";
 	public Figur turm1_schwarz;
 	public Figur turm2_schwarz;
 	public Figur laeufer1_schwarz;
@@ -40,7 +38,7 @@ public class ControlChess {
 	public Figur bauer5_schwarz;
 	public Figur bauer6_schwarz;
 	public Figur bauer7_schwarz;
-     public Figur bauer8_schwarz;
+    public Figur bauer8_schwarz;
 	public Figur turm1_weiss;
 	public Figur turm2_weiss;
 	public Figur laeufer1_weiss;
@@ -57,6 +55,8 @@ public class ControlChess {
 	public Figur bauer6_weiss;
 	public Figur bauer7_weiss;
 	public Figur bauer8_weiss;
+	String black = "schwarz";
+	String white = "weiss";
 	
 	/**
 	 * Konstruktor der Klasse ControlChess, der wichtige Methoden ausführt um den Anfang des Spiels zu definieren

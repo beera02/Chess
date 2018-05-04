@@ -23,7 +23,6 @@ public class ButtonListener implements ActionListener {
 	private JButton b;
 	private Spieler spieler1;
 	private Spieler spieler2;
-	private double randomStarter;
 	private int runde = 1;
 	private ControlChess control;
 	
@@ -60,7 +59,7 @@ public class ButtonListener implements ActionListener {
 		if((e.getActionCommand() == "OK!") & (runde == 2) & !(tf.getText().equals(""))) {
 			spieler2.setSpielerName(tf.getText());
 			tf.setText(null);
-			randomStarter = Math.round(Math.random());
+			double randomStarter = Math.round(Math.random());
 			
 			if(randomStarter == 1.0) {
 				ta.setText("Der Spieler 2 heisst nun " + spieler2.getSpielerName() + "!\n" + spieler2.getSpielerName() + ": Sie wurden ausgewählt, das Spiel mit Weiss zu starten!");

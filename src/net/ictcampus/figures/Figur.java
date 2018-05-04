@@ -18,7 +18,6 @@ public abstract class Figur {
 	public int xPos;
 	public int yPos;
 	public ImageIcon symbol;
-	public Color myColor = new Color(242, 206, 103);
 	public FeldGUI field;
 	
 	/**
