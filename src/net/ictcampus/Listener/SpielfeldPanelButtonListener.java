@@ -10,6 +10,16 @@ import javax.swing.JOptionPane;
 import net.ictcampus.figures.Figur;
 import net.ictcampus.gamecontrol.ControlChess;
 
+/**
+ * Diese Klasse ist für den ganzen Spielablauf zuständig. Insgesamt wurden 64
+ * Objekte dieses Listeners erstellt & jedem Feld auf dem Schachbrett wurde
+ * einer angehängt. Der Listener überprüft, von wo der Klick kommt und
+ * verschiebt, respektive berechnet die Felder von der Figur.
+ * 
+ * @author weberyo
+ * @version 1.1
+ *
+ */
 public class SpielfeldPanelButtonListener implements ActionListener {
 
      static String action = "choose";
@@ -19,11 +29,22 @@ public class SpielfeldPanelButtonListener implements ActionListener {
      private ControlChess control;
      private JButton button;
 
+     /**
+      * Der Konstruktor. Initialisiert die Variable control.
+      * 
+      * @param control
+      *             Hier ist die Kontrolle vom Spiel gespeichert. Wird verwendet, um
+      *             auf alle Elemente vom Spiel zuzugreifen.
+      */
      public SpielfeldPanelButtonListener(ControlChess control) {
           this.control = control;
      }
 
      @Override
+     /**
+      * In dieser Klasse wird der ganze Spielablauf berechnet. Wer dran ist, ob man
+      * gewonnen hat usw.
+      */
      public void actionPerformed(ActionEvent e) {
 
           int calcPosition;
@@ -60,8 +81,7 @@ public class SpielfeldPanelButtonListener implements ActionListener {
                          break;
                     }
                }
-          }
-          else if (action.equals("set")) {
+          } else if (action.equals("set")) {
                int counterRemoveFigur = 0;
                int checkBackwards = 0;
                int breaker = 0;

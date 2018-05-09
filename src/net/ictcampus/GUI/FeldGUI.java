@@ -294,4 +294,36 @@ public class FeldGUI extends JFrame {
      public void setSpieler2(Spieler spieler2) {
           this.spieler2 = spieler2;
      }
+
+     
+     public JButton[] getWeisseFelder() {
+          return weisseFelder;
+     }
+
+     
+     public JButton[] getSchwarzeFelder() {
+          return schwarzeFelder;
+     }
+
+     
+     public Color getHellBraun() {
+          return hellBraun;
+     }
+
+     
+     public Color getDunkelBraun() {
+          return dunkelBraun;
+     }
+
+     
+     public Color getDunkelGrau() {
+          return dunkelGrau;
+     }
+
+     
+     public Color getHellGrau() {
+          return hellGrau;
+     }
+     
+     
 }
