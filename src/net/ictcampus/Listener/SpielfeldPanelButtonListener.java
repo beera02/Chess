@@ -61,7 +61,6 @@ public class SpielfeldPanelButtonListener implements ActionListener {
                     }
                }
           }
-
           else if (action.equals("set")) {
                int counterRemoveFigur = 0;
                int checkBackwards = 0;
@@ -110,13 +109,13 @@ public class SpielfeldPanelButtonListener implements ActionListener {
                                                                  "Gratulation " + control.getFeld()
                                                                            .getSpieler1()
                                                                            .getSpielerName()
-                                                                           + " sie haben Ihren Gegner Schachmatt gesetzt!");
+                                                                           + ", Sie haben gewonnen!");
                                                   } else {
                                                        JOptionPane.showMessageDialog(null,
                                                                  "Gratulation " + control.getFeld()
                                                                            .getSpieler2()
                                                                            .getSpielerName()
-                                                                           + " sie haben Ihren Gegner Schachmatt gesetzt!");
+                                                                           + ", Sie haben gewonnen!");
                                                   }
                                              } else if (!control.getFiguren_weiss()
                                                        .contains(control.koenig_weiss)) {
@@ -126,13 +125,13 @@ public class SpielfeldPanelButtonListener implements ActionListener {
                                                                  "Gratulation " + control.getFeld()
                                                                            .getSpieler1()
                                                                            .getSpielerName()
-                                                                           + " sie haben Ihren Gegner Schachmatt gesetzt!");
+                                                                           + ", Sie haben gewonnen!");
                                                   } else {
                                                        JOptionPane.showMessageDialog(null,
                                                                  "Gratulation " + control.getFeld()
                                                                            .getSpieler2()
                                                                            .getSpielerName()
-                                                                           + " sie haben Ihren Gegner Schachmatt gesetzt!");
+                                                                           + ", Sie haben gewonnen!");
                                                   }
                                                   control.getFeld().setAllButtonsToFalse();
                                                   action = "finished";
@@ -170,13 +169,13 @@ public class SpielfeldPanelButtonListener implements ActionListener {
                                                                  "Gratulation " + control.getFeld()
                                                                            .getSpieler1()
                                                                            .getSpielerName()
-                                                                           + " sie haben Ihren Gegner Schachmatt gesetzt!");
+                                                                           + ", Sie haben gewonnen!");
                                                   } else {
                                                        JOptionPane.showMessageDialog(null,
                                                                  "Gratulation " + control.getFeld()
                                                                            .getSpieler2()
                                                                            .getSpielerName()
-                                                                           + " sie haben Ihren Gegner Schachmatt gesetzt!");
+                                                                           + ", Sie haben gewonnen!");
                                                   }
                                                   control.getFeld().setAllButtonsToFalse();
                                                   action = "finished";

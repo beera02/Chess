@@ -1,4 +1,3 @@
-
 package net.ictcampus.gamecontrol;
 
 import java.util.ArrayList;
