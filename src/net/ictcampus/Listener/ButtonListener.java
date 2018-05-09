@@ -74,33 +74,10 @@ public class ButtonListener implements ActionListener {
                     spieler2.setSpielerFarbe("schwarz");
 			}
 			runde = 3;
+			control.wechsleSpieler("weiss");
 			b.setEnabled(false);
 			tf.setEnabled(false);
 		}
-		if(runde == 3) {
-			runde = 4;
-			for(Figur figurschwarz:control.getFiguren_schwarz()) {
-				if(figurschwarz.equals(control.koenig_schwarz)) {
-					for(Figur figurweiss:control.getFiguren_weiss()) {
-						if(figurweiss.equals(control.koenig_weiss)) {
-							while(figurweiss.equals(control.koenig_weiss)){
-								if(runde == 4) {
-									control.wechsleSpieler("weiss");
 
-									runde = 5;
-									break;
-								}
-								if(runde == 5) {
-									control.wechsleSpieler("schwarz");
-									
-									runde = 4;
-									break;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 }
