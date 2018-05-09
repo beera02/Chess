@@ -62,12 +62,16 @@ public class ButtonListener implements ActionListener {
 			spieler2.setSpielerName(tf.getText());
 			tf.setText(null);
 			double randomStarter = Math.random();
-			
+			System.out.println(randomStarter);
 			if(randomStarter >= 0.5) {
 				ta.setText("Der Spieler 2 heisst nun " + spieler2.getSpielerName() + "!\n" + spieler2.getSpielerName() + ": Sie wurden ausgewählt, das Spiel mit Weiss zu starten!");
+				spieler2.setSpielerFarbe("weiss");
+				spieler1.setSpielerFarbe("schwarz");
 			}
 			else {
 				ta.setText("Der Spieler 2 heisst nun " + spieler2.getSpielerName() + "!\n" + spieler1.getSpielerName() + ": Sie wurden ausgewählt, das Spiel mit Weiss zu starten!");
+				spieler1.setSpielerFarbe("weiss");
+                    spieler2.setSpielerFarbe("schwarz");
 			}
 			runde = 3;
 			b.setEnabled(false);
